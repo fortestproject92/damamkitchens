@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import IdentityCard from '../components/IdentityCard.astro';
+---
+
+<Layout
+  title="تواصل معنا | فني صيانة مطابخ وإصلاح مفصلات في الدمام"
+  description="تواصل فوراً مع فني صيانة مطابخ وإصلاح مفصلات في الدمام والمنطقة الشرقية. احجز موعد معاينة سريعة عبر واتساب أو الاتصال المباشر على 0552854516. متواجدون حتى 2 بعد منتصف الليل."
+  page="contact"
+>
+  <Header slot="header" />
+
+  <section class="page-hero" style="background-image: url('/assets/17.jpg');">
+    <div class="container">
+      <h1 data-ar="تواصل معنا - حجز موعد صيانة فوري" data-en="Contact Us - Instant Maintenance Booking">تواصل معنا - حجز موعد صيانة فوري</h1>
+      <p data-ar="فريقنا المتخصص في صيانة وتصليح مطابخ الدمام جاهز لاستقبال اتصالاتكم ورسائلكم طوال اليوم من 7:00 ص حتى 2:00 بعد منتصف الليل." data-en="Our specialized Dammam kitchen repair team is ready to receive your calls and messages daily from 7:00 AM to 2:00 AM.">
+        فريقنا المتخصص في صيانة وتصليح مطابخ الدمام جاهز لاستقبال اتصالاتكم ورسائلكم طوال اليوم من 7:00 ص حتى 2:00 بعد منتصف الليل.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2 contact-main-grid">
+
+        <!-- Form Column -->
+        <div class="card contact-form-card">
+          <span class="badge" data-ar="نموذج الحجز السريع" data-en="Fast Booking Form">نموذج الحجز السريع</span>
+          <h2 class="form-title" data-ar="أرسل طلبك مباشرة إلى واتساب الفني" data-en="Send Request Directly to WhatsApp">أرسل طلبك مباشرة إلى واتساب الفني</h2>
+          <p class="form-intro" data-ar="املأ البيانات وسيقوم النموذج بتحويلها فوراً إلى رسالة واتساب منسقة ومجهزة للإرسال السريع." data-en="Fill the fields and the form will instantly format your message and open WhatsApp.">
+            املأ البيانات وسيقوم النموذج بتحويلها فوراً إلى رسالة واتساب منسقة ومجهزة للإرسال السريع.
+          </p>
+
+          <form id="contact-form" class="smart-form">
+            <div class="form-group">
+              <label for="client-name" data-ar="الاسم الكريم *" data-en="Your Name *">الاسم الكريم *</label>
+              <input
+                type="text"
+                id="client-name"
+                name="name"
+                required
+                data-ar-ph="أدخل اسمك الكريم"
+                data-en-ph="Enter your full name"
+                placeholder="أدخل اسمك الكريم"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="client-phone" data-ar="رقم الجوال للتواصل *" data-en="Mobile Number *">رقم الجوال للتواصل *</label>
+              <input
+                type="tel"
+                id="client-phone"
+                name="phone"
+                required
+                dir="ltr"
+                data-ar-ph="مثال: 0552854516"
+                data-en-ph="e.g. 0552854516"
+                placeholder="مثال: 0552854516"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="service-type" data-ar="نوع الخدمة المطلوبة *" data-en="Requested Service *">نوع الخدمة المطلوبة *</label>
+              <select id="service-type" name="service" required>
+                <option value="" disabled selected data-ar="-- اختر نوع الخدمة --" data-en="-- Select Service --">-- اختر نوع الخدمة --</option>
+                <option value="صيانة وإصلاح مفصلات مطبخ" data-ar="صيانة وإصلاح مفصلات مطبخ" data-en="Hinge Repair & Alignment">صيانة وإصلاح مفصلات مطبخ</option>
+                <option value="تركيب وترقية مفصلات هيدروليك ناعمة" data-ar="تركيب وترقية مفصلات هيدروليك ناعمة" data-en="Soft-Close Hydraulic Hinge Upgrade">تركيب وترقية مفصلات هيدروليك ناعمة</option>
+                <option value="تصليح واستبدال سحابات الأدراج" data-ar="تصليح واستبدال سحابات الأدراج" data-en="Drawer Slides & Rails Repair">تصليح واستبدال سحابات الأدراج</option>
+                <option value="وزن وضبط أبواب الخزائن والفواصل" data-ar="وزن وضبط أبواب الخزائن والفواصل" data-en="Cabinet Door Re-Alignment">وزن وضبط أبواب الخزائن والفواصل</option>
+                <option value="تقوية وتدعيم الرفوف الداخلية" data-ar="تقوية وتدعيم الرفوف الداخلية" data-en="Internal Shelf Reinforcement">تقوية وتدعيم الرفوف الداخلية</option>
+                <option value="صيانة شاملة وتجديد مطبخ ومعالجة رطوبة" data-ar="صيانة شاملة وتجديد مطبخ ومعالجة رطوبة" data-en="Comprehensive Overhaul & Moisture Fix">صيانة شاملة وتجديد مطبخ ومعالجة رطوبة</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="client-area" data-ar="الحي / المدينة في الشرقية *" data-en="District / City *">الحي / المدينة في الشرقية *</label>
+              <input
+                type="text"
+                id="client-area"
+                name="area"
+                required
+                data-ar-ph="مثال: الدمام - حي الشاطئ / الخبر - الحزام الذهبي"
+                data-en-ph="e.g. Dammam - Al Shatea / Khobar"
+                placeholder="مثال: الدمام - حي الشاطئ / الخبر - الحزام الذهبي"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="client-notes" data-ar="تفاصيل المشكلة أو العطل" data-en="Details of the Problem">تفاصيل المشكلة أو العطل</label>
+              <textarea
+                id="client-notes"
+                name="notes"
+                rows="4"
+                data-ar-ph="وضح لنا باختصار ما الذي يحتاج لصيانة (مثلاً: أبواب ساقطة، درج مكسور، مفصلات تحتاج تغيير...)"
+                data-en-ph="Describe briefly what needs repair (e.g. sagging doors, broken drawer rail...)"
+                placeholder="وضح لنا باختصار ما الذي يحتاج لصيانة (مثلاً: أبواب ساقطة، درج مكسور، مفصلات تحتاج تغيير...)"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-whatsapp btn-lg submit-btn">
+              <span>💬</span>
+              <span data-ar="إرسال الطلب فوراً عبر واتساب" data-en="Send Request via WhatsApp">إرسال الطلب فوراً عبر واتساب</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Info & Map Column -->
+        <div class="contact-side-info">
+
+          <!-- Contact Promotional Banner -->
+          <div class="contact-banner-card card">
+            <img
+              src="/assets/0552854516.jpg"
+              alt="رقم صيانة مطابخ الدمام 0552854516"
+              class="contact-promo-img"
+              width="600"
+              height="350"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Quick Info Card -->
+          <div class="card info-box">
+            <h3 data-ar="معلومات الاتصال المباشر" data-en="Direct Contact Information">معلومات الاتصال المباشر</h3>
+            
+            <div class="contact-channels">
+              <a href="tel:+966552854516" class="contact-channel-item">
+                <span class="c-icon">📞</span>
+                <div>
+                  <strong data-ar="الاتصال الهاتفي السريع" data-en="Direct Phone Call">الاتصال الهاتفي السريع</strong>
+                  <span class="c-val" dir="ltr">0552854516</span>
+                </div>
+              </a>
+
+              <a href="https://wa.me/966552854516?text=مرحباً، أحتاج خدمة صيانة مطابخ" target="_blank" rel="noopener noreferrer" class="contact-channel-item wa-channel">
+                <span class="c-icon">💬</span>
+                <div>
+                  <strong data-ar="محادثة واتساب الفورية" data-en="Direct WhatsApp Chat">محادثة واتساب الفورية</strong>
+                  <span class="c-val" dir="ltr">+966 55 285 4516</span>
+                </div>
+              </a>
+
+              <div class="contact-channel-item">
+                <span class="c-icon">🕐</span>
+                <div>
+                  <strong data-ar="ساعات التغطية اليومية" data-en="Daily Working Hours">ساعات التغطية اليومية</strong>
+                  <span class="c-val" data-ar="يومياً من 7:00 صباحاً حتى 2:00 بعد منتصف الليل" data-en="Daily: 7:00 AM - 2:00 AM">يومياً من 7:00 صباحاً حتى 2:00 بعد منتصف الليل</span>
+                </div>
+              </div>
+
+              <div class="contact-channel-item">
+                <span class="c-icon">📍</span>
+                <div>
+                  <strong data-ar="المقر ومنطقة العمل" data-en="Headquarters & Work Area">المقر ومنطقة العمل</strong>
+                  <span class="c-val" data-ar="الدمام، الخبر، الظهران، وكافة مدن ومحافظات المنطقة الشرقية" data-en="Dammam, Khobar, Dhahran, and all Eastern Province">الدمام، الخبر، الظهران، وكافة مدن ومحافظات المنطقة الشرقية</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Map Embed -->
+          <div class="card map-card">
+            <h3 data-ar="نطاق التغطية الجغرافية - الدمام والشرقية" data-en="Geographic Coverage - Dammam & EP">نطاق التغطية الجغرافية - الدمام والشرقية</h3>
+            <div class="map-iframe-box">
+              <iframe
+                title="موقع صيانة مطابخ الدمام على خريطة جوجل"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114441.52808298287!2d50.01633427329388!3d26.42068285514041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e29a99ef397d%3A0xb36b33534b8c0677!2sDammam%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sen!2ssa"
+                width="100%"
+                height="280"
+                style="border:0; border-radius: 12px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="map-action">
+              <a
+                href="https://maps.google.com/?q=Dammam,+Saudi+Arabia"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline map-dir-btn"
+              >
+                <span>🗺️</span>
+                <span data-ar="فتح الموقع في خرائط جوجل" data-en="Open in Google Maps">فتح الموقع في خرائط جوجل</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Identity Card Section -->
+      <div class="contact-id-card-wrap">
+        <div class="section-header">
+          <h2 class="section-title" data-ar="بطاقة العمل الرقمية" data-en="Digital Business Card">بطاقة العمل الرقمية</h2>
+          <p class="section-subtitle" data-ar="احتفظ ببيانات فني صيانة مطابخ الدمام على جوالك للمستقبل" data-en="Keep our technician credentials on your phone for future needs">احتفظ ببيانات فني صيانة مطابخ الدمام على جوالك للمستقبل</p>
+        </div>
+        <IdentityCard />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form Intercept Script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var name = document.getElementById('client-name').value.trim();
+        var phone = document.getElementById('client-phone').value.trim();
+        var service = document.getElementById('service-type').value;
+        var area = document.getElementById('client-area').value.trim();
+        var notes = document.getElementById('client-notes').value.trim();
+
+        var msg = "السلام عليكم ورحمة الله وبركاته،\n"
+                + "أود طلب خدمة صيانة مطبخ عبر موقع damamkitchens.com:\n\n"
+                + "👤 الاسم: " + name + "\n"
+                + "📱 الجوال: " + phone + "\n"
+                + "🛠️ الخدمة المطلوبة: " + service + "\n"
+                + "📍 الحي / المدينة: " + area + "\n"
+                + (notes ? "📝 تفاصيل المشكلة: " + notes + "\n\n" : "\n")
+                + "أرجو التواصل لتحديد موعد الزيارة والمعاينة وشكراً.";
+
+        var waUrl = "https://wa.me/966552854516?text=" + encodeURIComponent(msg);
+        window.open(waUrl, '_blank');
+      });
+    });
+  </script>
+
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.contact-main-grid {
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.contact-form-card {
+  padding: 3rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .form-title {
+  color: var(--color-accent);
+}
+
+.form-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: start;
+}
+
+.smart-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: start;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-body);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(181, 102, 26, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+/* Side Info */
+.contact-side-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-banner-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.contact-promo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.info-box {
+  padding: 2.5rem;
+}
+
+.info-box h3 {
+  font-size: 1.3rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(181,102,26,0.2);
+  padding-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .info-box h3 {
+  color: var(--color-accent);
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-channel-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--border-radius);
+  background: var(--bg-section-alt);
+  transition: var(--transition-fast);
+}
+
+.contact-channel-item:hover {
+  background: rgba(181, 102, 26, 0.08);
+}
+
+.c-icon {
+  font-size: 1.5rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contact-channel-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.2rem;
+  text-align: start;
+}
+
+[data-theme="dark"] .contact-channel-item strong {
+  color: var(--color-accent);
+}
+
+.c-val {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+  text-align: start;
+}
+
+.map-card {
+  padding: 2rem;
+}
+
+.map-card h3 {
+  font-size: 1.15rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .map-card h3 {
+  color: var(--color-accent);
+}
+
+.map-iframe-box {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-action {
+  text-align: center;
+}
+
+.map-dir-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.contact-id-card-wrap {
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .contact-form-card { padding: 1.75rem 1.25rem; text-align: center; }
+  .form-intro { text-align: center; }
+  .form-group label { text-align: center; }
+  .info-box { padding: 1.5rem; text-align: center; }
+  .contact-channel-item { flex-direction: column; align-items: center; text-align: center; }
+  .contact-channel-item strong, .c-val { text-align: center; }
+}
+</style>

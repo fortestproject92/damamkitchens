@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+
+const faqs = [
+  {
+    qAr: "ما هي أوقات وساعات العمل الرسمية لديكم؟",
+    qEn: "What are your official working hours?",
+    aAr: "نعمل يومياً طوال أيام الأسبوع من الساعة 7:00 صباحاً وحتى الساعة 2:00 بعد منتصف الليل دون انقطاع، بما في ذلك أيام الجمعة والعطلات الرسمية، لضمان تلبية كافة طلبات الصيانة العاجلة.",
+    aEn: "We operate daily 7 days a week from 7:00 AM to 2:00 AM continuously, including Fridays and official holidays, ensuring all urgent repair requests are met promptly."
+  },
+  {
+    qAr: "ما هي المناطق والأحياء التي تغطونها في المنطقة الشرقية؟",
+    qEn: "Which cities and districts do you cover in Eastern Province?",
+    aAr: "نغطي كافة أحياء مدينة الدمام (مثل الشاطئ، الفيصلية، الجلوية، النور، المزروعية، طيبة، ضاحية الملك فهد)، بالإضافة إلى مدن الخبر، الظهران، القطيف، سيهات، عنك، والجبيل.",
+    aEn: "We cover all Dammam neighborhoods (Al Shatea, Al Faisaliyah, Al Jalawiyah, Al Noor, Tayba, King Fahd Suburb), as well as Khobar, Dhahran, Qatif, Saihat, Anak, and Jubail."
+  },
+  {
+    qAr: "كيف يمكنني طلب خدمة صيانة أو حجز موعد معاينة لمطبخي؟",
+    qEn: "How do I request maintenance or book an inspection appointment?",
+    aAr: "يمكنك التواصل معنا مباشرة وبكل سهولة عبر الاتصال على الرقم 0552854516 أو إرسال رسالة واتساب مع تحديد موقعك ونوع العطل في مطبخك، وسيتم التنسيق وحضور الفني في أقرب وقت.",
+    aEn: "Simply call 0552854516 directly or send a WhatsApp message with your location and kitchen issue, and a technician will be dispatched promptly."
+  },
+  {
+    qAr: "هل يتم الإصلاح في المنزل مباشرة أم يستلزم فك ونقل الخزائن؟",
+    qEn: "Is the repair done directly at home, or does it require taking cabinets away?",
+    aAr: "يتم الإصلاح بالكامل داخل منزلك في نفس الزيارة؛ حيث يحضر الفني بكافة الأدوات المتطورة ومفصلات الهيدروليك وسكك الأدراج والدعامات دون الحاجة لنقل أي جزء خارج المنزل.",
+    aEn: "Repairs are 100% completed inside your home during the same visit; our technician arrives fully equipped with advanced tools, hydraulic hinges, rails, and brackets without removing anything off-site."
+  },
+  {
+    qAr: "ما هي أنواع المفصلات التي تقومون بصيانتها وتركيبها؟",
+    qEn: "What hinge types do you repair and install?",
+    aAr: "نتعامل مع كافة أنواع المفصلات: مفصلات الهيدروليك ذات الإغلاق الناعم (Soft-Close)، مفصلات الزاوية 90 و180 و165 درجة، مفصلات مطابخ إيكيا، مفصلات مطابخ الألمنيوم والخشب الطبيعي وMDF.",
+    aEn: "We handle all hinge types: soft-close hydraulic hinges, corner 90°, 180°, and 165° hinges, IKEA kitchen hinges, and hardware for aluminum, solid wood, and MDF cabinets."
+  },
+  {
+    qAr: "كم يستغرق إصلاح وضبط مفصلات وسحابات المطبخ؟",
+    qEn: "How long does kitchen hinge and drawer repair usually take?",
+    aAr: "تستغرق معظم عمليات الصيانة وضبط الأبواب أو تغيير المفصلات من 30 دقيقة إلى ساعتين كحد أقصى حسب حجم المطبخ وعدد الأجزاء المطلوب صيانتها.",
+    aEn: "Most repairs and door adjustments take between 30 minutes to 2 hours maximum, depending on kitchen size and the number of components requiring attention."
+  },
+  {
+    qAr: "هل يحضر الفني قطع الغيار والمفصلات المناسبة معه مباشرة؟",
+    qEn: "Does the technician bring appropriate spare hinges and parts along?",
+    aAr: "نعم، ورشتنا المتنقلة مجهزة بمجموعة متكاملة من المفصلات الإيطالية والألمانية، وسحابات الأدراج رولمان بلي بمختلف المقاسات، ودعامات الرفوف وبراغي التثبيت الفايبر الصلبة.",
+    aEn: "Yes, our mobile unit is stocked with comprehensive Italian and German hinges, ball-bearing drawer slides in multiple sizes, shelf brackets, and heavy-duty anchors."
+  },
+  {
+    qAr: "هل تقدمون ضماناً على جودة الصيانة والمفصلات المركبة؟",
+    qEn: "Do you offer a guarantee on workmanship and installed hardware?",
+    aAr: "بالتأكيد، نحرص على تقديم ضمان معتمد على دقة التركيب وجودة المفصلات وقطع الغيار المستخدمة لضمان استقرار مطبخك وراحتك التامة لسنوات قادمة.",
+    aEn: "Absolutely, we provide a reliable guarantee on installation precision and hardware durability, ensuring lasting kitchen stability and peace of mind."
+  }
+];
+---
+
+<Layout
+  title="الأسئلة الشائعة حول صيانة المطابخ والمفصلات | الدمام"
+  description="إجابات وافية وشاملة لأكثر الأسئلة تكراراً حول خدمات صيانة وإصلاح مفصلات وسحابات المطابخ في الدمام، الخبر، والمنطقة الشرقية. ساعات العمل، التغطية، وسرعة الوصول."
+  page="faq"
+>
+  <Header slot="header" />
+
+  <section class="page-hero" style="background-image: url('/assets/16.jpg');">
+    <div class="container">
+      <h1 data-ar="الأسئلة الشائعة وإجاباتها" data-en="Frequently Asked Questions & Answers">الأسئلة الشائعة وإجاباتها</h1>
+      <p data-ar="كل ما تود معرفته عن خدمات صيانة مطابخ الدمام، مواعيد العمل، وتفاصيل الخدمة المنزلية السريعة." data-en="Everything you need to know about our Dammam kitchen repair services, hours, and rapid home visits.">
+        كل ما تود معرفته عن خدمات صيانة مطابخ الدمام، مواعيد العمل، وتفاصيل الخدمة المنزلية السريعة.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQS ACCORDION -->
+  <section class="section">
+    <div class="container">
+      <div class="faq-page-wrapper">
+        <div class="faq-accordion-wrapper">
+          {faqs.map((faq, idx) => (
+            <div class:list={['faq-item', idx === 0 ? 'open' : '']}>
+              <button class="faq-question" type="button" aria-expanded={idx === 0 ? 'true' : 'false'}>
+                <span data-ar={faq.qAr} data-en={faq.qEn}>{faq.qAr}</span>
+                <span class="faq-icon">{idx === 0 ? '−' : '+'}</span>
+              </button>
+              <div class="faq-answer" style={idx === 0 ? 'max-height: 200px;' : ''}>
+                <p data-ar={faq.aAr} data-en={faq.aEn}>{faq.aAr}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Have more questions box -->
+        <div class="faq-contact-box card">
+          <div class="fc-icon">❓</div>
+          <h3 data-ar="هل لديك سؤال آخر لم تجد إجابته هنا؟" data-en="Do you have another question not listed here?">هل لديك سؤال آخر لم تجد إجابته هنا؟</h3>
+          <p data-ar="فريقنا متاح للرد على كافة استفساراتك الفنية عبر واتساب والاتصال الهاتفي المباشر طوال اليوم حتى الساعة 2 بعد منتصف الليل." data-en="Our team is ready to answer all your technical questions via WhatsApp and direct call daily until 2:00 AM.">
+            فريقنا متاح للرد على كافة استفساراتك الفنية عبر واتساب والاتصال الهاتفي المباشر طوال اليوم حتى الساعة 2 بعد منتصف الليل.
+          </p>
+          <div class="fc-actions">
+            <a href="https://wa.me/966552854516?text=مرحباً، لدي استفسار بخصوص صيانة المطبخ" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+              <span>💬</span>
+              <span data-ar="اسأل الفني عبر واتساب" data-en="Ask Technician on WhatsApp">اسأل الفني عبر واتساب</span>
+            </a>
+            <a href="tel:+966552854516" class="btn btn-secondary btn-lg">
+              <span>📞</span>
+              <span data-ar="اتصال مباشر: 0552854516" data-en="Direct Call: 0552854516">اتصال مباشر: 0552854516</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.faq-page-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faq-accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item.open {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.35rem 1.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: start;
+  background: transparent;
+}
+
+.faq-icon {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-inline-start: 1rem;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 1.75rem;
+}
+
+.faq-answer p {
+  padding-bottom: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+  text-align: start;
+}
+
+.faq-contact-box {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  background: linear-gradient(135deg, rgba(28,61,94,0.06), rgba(181,102,26,0.06));
+  border: 2px dashed var(--color-primary);
+}
+
+.fc-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.faq-contact-box h3 {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .faq-contact-box h3 {
+  color: var(--color-accent);
+}
+
+.faq-contact-box p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.fc-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .faq-question { text-align: center; justify-content: center; padding: 1.25rem 1rem; }
+  .faq-answer p { text-align: center; }
+}
+</style>

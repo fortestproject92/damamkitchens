@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+
+const articles = [
+  {
+    titleAr: "5 علامات تدل على تلف مفصلات المطبخ وضرورة صيانتها فوراً",
+    titleEn: "5 Signs Your Kitchen Hinges Need Urgent Repair",
+    date: "15 نوفمبر 2026",
+    readTimeAr: "قراءة 4 دقائق",
+    readTimeEn: "4 min read",
+    categoryAr: "دليل الصيانة",
+    categoryEn: "Maintenance Guide",
+    summaryAr: "تعرف على المؤشرات التحذيرية التي تخبرك بأن مفصلات دواليب مطبخك بدأت في الانهيار، وكيف تتفادى سقوط الأبواب الزجاجية أو الخشبية الثقيلة قبل فوات الأوان.",
+    summaryEn: "Discover the warning signs of failing kitchen hinges and how to prevent heavy wooden or glass doors from falling off.",
+    pointsAr: [
+      "ملاحظة ميلان واضح في الباب أو عدم إغلاقه بشكل كامل ومستوٍ.",
+      "سماع صوت صرير أو احتكاك حاد عند فتح أو غلق كبائن المطبخ.",
+      "تخلخل المسامير وخروجها من أماكنها في الخشب أو قطاع الألمنيوم.",
+      "تسرب الزيت الهيدروليكي من المفصلة مما يفقدها خاصية الإغلاق الهادئ.",
+      "احتكاك حواف الباب مع الأدراج المجاورة أو الرخام العلوي."
+    ],
+    pointsEn: [
+      "Noticeable door sagging or failure to shut completely flush.",
+      "Sharp squeaking or grinding friction noises when moving doors.",
+      "Loose screws tearing out of the wood substrate or aluminum frame.",
+      "Hydraulic fluid leaking, destroying the soft-close feature.",
+      "Door edges rubbing against adjacent drawers or the countertop."
+    ]
+  },
+  {
+    titleAr: "مفصلات الهيدروليك الناعمة: لماذا تعتبر الاستثمار الأفضل لمطبخك؟",
+    titleEn: "Soft-Close Hydraulic Hinges: Why They Are The Best Upgrade",
+    date: "12 نوفمبر 2026",
+    readTimeAr: "قراءة 5 دقائق",
+    readTimeEn: "5 min read",
+    categoryAr: "قطع الغيار",
+    categoryEn: "Hardware Guide",
+    summaryAr: "مقارنة فنية دقيقة بين المفصلات التقليدية ومفصلات السوفت كلوز (Soft-Close) الهيدروليكية، وأثرها المباشر في إطالة عمر خشب المطبخ وحماية الأطفال من إصابات الأصابع.",
+    summaryEn: "A technical comparison between traditional hinges and soft-close hydraulic dampers, and their impact on cabinet longevity.",
+    pointsAr: [
+      "إلغاء الصدمات الميكانيكية التي تفكك مسامير المفصلات بمرور الوقت.",
+      "توفير بيئة هادئة ومريحة داخل المنزل بدون أصوات ارتطام مزعجة.",
+      "أمان فائق للأطفال من خلال منع انطباق الأبواب المفاجئ على الأصابع.",
+      "صناعة إيطالية وألمانية مقاومة للصدأ وبخار الطبخ المستمر.",
+      "سهولة الفك والتركيب عبر تقنية الكليبس (Clip-on) المتقدمة."
+    ],
+    pointsEn: [
+      "Eliminating mechanical shocks that loosen cabinet screws over time.",
+      "Creating a peaceful home environment free of slamming noise.",
+      "Ultimate safety for toddlers by preventing sudden finger pinching.",
+      "Italian and German rust-resistant stainless alloy craftsmanship.",
+      "Effortless quick-release clip-on mechanism for easy cleaning."
+    ]
+  },
+  {
+    titleAr: "طرق حماية ومعالجة خزانة حوض الجلي من الرطوبة والعفن بالدمام",
+    titleEn: "How to Protect Sink Cabinets from Moisture Damage in Dammam",
+    date: "8 نوفمبر 2026",
+    readTimeAr: "قراءة 6 دقائق",
+    readTimeEn: "6 min read",
+    categoryAr: "نصائح وإرشادات",
+    categoryEn: "Tips & Solutions",
+    summaryAr: "تعتبر رطوبة المنطقة الشرقية عاملاً مسرعاً لتلف كبائن حوض المطبخ. نقدم لك الحلول العملية التي يعتمدها فنيو الصيانة لمنع تعفن الألواح وتدعيم القواعد.",
+    summaryEn: "Eastern Province coastal humidity accelerates sink cabinet wear. Here are practical technician-approved methods to waterproof your base.",
+    pointsAr: [
+      "تركيب صواني ألمنيوم أو بلاستيك معزولة أسفل حوض الجلي لالتقاط أي تسريب.",
+      "استخدام السيليكون الطبي المضاد للبكتيريا حول أطراف الحوض والرخام.",
+      "صيانة المفصلات السفلية بانتظام بزيوت عازلة للرطوبة تمنع التآكل والصدأ.",
+      "استبدال الألواح الخشبية المنتفخة بألواح PVC فوم مضادة للماء بنسبة 100%.",
+      "التهوية الدورية للكابينة لمنع الروائح الكريهة وتجمع الحشرات."
+    ],
+    pointsEn: [
+      "Installing waterproof aluminum drip trays underneath the sink.",
+      "Applying anti-bacterial sanitary silicone around sink rims and counters.",
+      "Servicing bottom hinges with moisture-barrier silicone lubricants.",
+      "Replacing swollen MDF boards with 100% waterproof PVC foam sheets.",
+      "Periodic cabinet airing to prevent odor accumulation and mold."
+    ]
+  }
+];
+---
+
+<Layout
+  title="المدونة ونصائح صيانة المطابخ | فني صيانة مطابخ الدمام"
+  description="مقالات إرشادية ونصائح متخصصة من فني صيانة مطابخ الدمام: كيفية حماية المفصلات، طرق إصلاح سحابات الأدراج، والتعامل مع رطوبة المطابخ في الشرقية."
+  page="blog"
+>
+  <Header slot="header" />
+
+  <section class="page-hero" style="background-image: url('/assets/14.jpg');">
+    <div class="container">
+      <h1 data-ar="مدونة صيانة المطابخ وإصلاح المفصلات" data-en="Kitchen Maintenance & Hinge Repair Blog">مدونة صيانة المطابخ وإصلاح المفصلات</h1>
+      <p data-ar="نصائح عملية ومعلومات فنية قيمة للمحافظة على كفاءة وأناقة مطبخك وإطالة عمره لسنوات طويلة." data-en="Practical advice and expert insights to maintain your kitchen's peak performance and prolong its lifespan.">
+        نصائح عملية ومعلومات فنية قيمة للمحافظة على كفاءة وأناقة مطبخك وإطالة عمره لسنوات طويلة.
+      </p>
+    </div>
+  </section>
+
+  <!-- ARTICLES LIST -->
+  <section class="section">
+    <div class="container">
+      <div class="articles-grid">
+        {articles.map((art) => (
+          <article class="card article-card">
+            <div class="art-header">
+              <span class="badge art-badge" data-ar={art.categoryAr} data-en={art.categoryEn}>{art.categoryAr}</span>
+              <span class="art-meta">
+                <span>📅 {art.date}</span> • <span>⏱️ <span data-ar={art.readTimeAr} data-en={art.readTimeEn}>{art.readTimeAr}</span></span>
+              </span>
+            </div>
+
+            <h2 class="art-title" data-ar={art.titleAr} data-en={art.titleEn}>{art.titleAr}</h2>
+            <p class="art-summary" data-ar={art.summaryAr} data-en={art.summaryEn}>{art.summaryAr}</p>
+
+            <div class="art-highlights">
+              <strong data-ar="أبرز النقاط المستفادة:" data-en="Key Takeaways:">أبرز النقاط المستفادة:</strong>
+              <ul>
+                {art.pointsAr.map((pt, i) => (
+                  <li data-ar={pt} data-en={art.pointsEn[i]}>{pt}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="art-footer-action">
+              <a
+                href={`https://wa.me/966552854516?text=${encodeURIComponent(`مرحباً، قرأت مقال: "${art.titleAr}" وأود استشارة فني بخصوص مطبخي`)}`}
+                class="btn btn-whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>💬</span>
+                <span data-ar="استشارة الفني حول هذا الموضوع" data-en="Consult Technician on This">استشارة الفني حول هذا الموضوع</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Expert Consultation Card -->
+      <div class="blog-consult-card card">
+        <h3 data-ar="هل تحتاج استشارة متخصصة لحالة مطبخك؟" data-en="Need specialized consultation for your kitchen?">هل تحتاج استشارة متخصصة لحالة مطبخك؟</h3>
+        <p data-ar="فني صيانة مطابخ الدمام يسعد بتقديم النصيحة الفنية الصحيحة مباشرة وفحص المشكلة هاتفياً أو عبر واتساب مجاناً." data-en="Our certified technician is happy to provide expert guidance and initial WhatsApp assessment for free.">
+          فني صيانة مطابخ الدمام يسعد بتقديم النصيحة الفنية الصحيحة مباشرة وفحص المشكلة هاتفياً أو عبر واتساب مجاناً.
+        </p>
+        <div class="consult-actions">
+          <a href="https://wa.me/966552854516?text=مرحباً، أحتاج استشارة فنية بخصوص مطبخي" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+            <span>💬</span>
+            <span data-ar="تحدث مع الفني واتساب" data-en="Chat with Technician on WhatsApp">تحدث مع الفني واتساب</span>
+          </a>
+          <a href="tel:+966552854516" class="btn btn-secondary btn-lg">
+            <span>📞</span>
+            <span data-ar="اتصال مباشر: 0552854516" data-en="Call Now: 0552854516">اتصال مباشر: 0552854516</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.articles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.article-card {
+  padding: 2.5rem;
+  border-top: 4px solid var(--color-primary);
+}
+
+.art-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.art-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.art-title {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .art-title {
+  color: var(--color-accent);
+}
+
+.art-summary {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: start;
+}
+
+.art-highlights {
+  background: var(--bg-section-alt);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.75rem;
+}
+
+.art-highlights strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .art-highlights strong {
+  color: var(--color-accent);
+}
+
+.art-highlights ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.art-highlights li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  padding-inline-start: 1.25rem;
+}
+
+.art-highlights li::before {
+  content: '•';
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  position: absolute;
+  inset-inline-start: 0;
+  top: -2px;
+}
+
+.art-footer-action {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.blog-consult-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(28,61,94,0.06), rgba(181,102,26,0.06));
+}
+
+.blog-consult-card h3 {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .blog-consult-card h3 {
+  color: var(--color-accent);
+}
+
+.blog-consult-card p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.consult-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .article-card { padding: 1.5rem; text-align: center; }
+  .art-header { justify-content: center; }
+  .art-summary { text-align: center; }
+  .art-highlights { text-align: center; }
+  .art-highlights li { text-align: center; padding-inline-start: 0; }
+  .art-highlights li::before { display: none; }
+  .art-footer-action { justify-content: center; }
+  .art-footer-action .btn { width: 100%; justify-content: center; }
+}
+</style>

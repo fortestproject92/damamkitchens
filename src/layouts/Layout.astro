@@ -1,0 +1,375 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  page?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = `https://www.damamkitchens.com${Astro.url.pathname}`,
+  page = '',
+  ogImage = '/assets/logo/1.png'
+} = Astro.props;
+
+const siteUrl = 'https://www.damamkitchens.com';
+const siteName = 'صيانه مطابخ وإصلاح مفصلات في الدمام';
+const phone = '+966552854516';
+const whatsapp = '966552854516';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": siteName,
+  "description": description,
+  "url": siteUrl,
+  "telephone": phone,
+  "image": `${siteUrl}/assets/logo/1.png`,
+  "logo": `${siteUrl}/assets/logo/1.png`,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "الدمام",
+    "addressLocality": "الدمام",
+    "addressRegion": "المنطقة الشرقية",
+    "addressCountry": "SA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "26.4207",
+    "longitude": "50.0888"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "الدمام" },
+    { "@type": "City", "name": "الخبر" },
+    { "@type": "City", "name": "الظهران" },
+    { "@type": "City", "name": "القطيف" },
+    { "@type": "City", "name": "الجبيل" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "02:00"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": phone,
+    "contactType": "customer service",
+    "availableLanguage": ["Arabic","English"]
+  },
+  "sameAs": [
+    `https://wa.me/${whatsapp}`
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما أوقات عمل صيانة مطابخ الدمام؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعمل يومياً من الساعة 7:00 صباحاً حتى 2:00 بعد منتصف الليل في جميع أيام الأسبوع."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما المناطق التي تخدمها صيانة مطابخ الدمام؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نخدم جميع أحياء الدمام والخبر والظهران والقطيف والجبيل وجميع مناطق المنطقة الشرقية."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف أطلب خدمة صيانة مطبخي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "يمكنك التواصل معنا مباشرة عبر واتساب أو الاتصال على الرقم 0552854516 وسنصل إليك في أسرع وقت."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تأتون إلى المنزل لإصلاح المفصلات؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، نوفر خدمة الصيانة المنزلية ونصل إلى موقعك في الدمام والمنطقة الشرقية خلال مدة قصيرة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما أنواع مفصلات المطابخ التي تصلحونها؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نصلح جميع أنواع مفصلات المطابخ بما فيها مفصلات الخزائن العلوية والسفلية وأبواب الثلاجات والأدراج وأبواب الفرن."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كم يستغرق إصلاح مفصلات المطبخ؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "معظم أعمال الإصلاح تستغرق من 30 دقيقة إلى ساعتين حسب طبيعة العطل وعدد المفصلات المطلوب إصلاحها."
+      }
+    }
+  ]
+};
+---
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="صيانة مطابخ الدمام, إصلاح مفصلات مطابخ, فني مطابخ الدمام, صيانة خزائن مطبخ, مفصلات مطابخ الخبر, صيانة مطابخ المنطقة الشرقية" />
+  <meta name="author" content={siteName} />
+  <meta name="robots" content="index, follow" />
+  <!-- Canonical & Alternate -->
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang="ar" href={canonical} />
+  <link rel="alternate" hreflang="en" href={`${siteUrl}/en${Astro.url.pathname}`} />
+  <link rel="alternate" hreflang="x-default" href={canonical} />
+
+  <!-- Local SEO Geo Meta (Dammam & Eastern Province) -->
+  <meta name="geo.region" content="SA-04" />
+  <meta name="geo.placename" content="الدمام، المنطقة الشرقية" />
+  <meta name="geo.position" content="26.4207;50.0888" />
+  <meta name="ICBM" content="26.4207, 50.0888" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="ar_SA" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="ar" href={canonical} />
+  <link rel="alternate" hreflang="en" href={`${siteUrl}/en${Astro.url.pathname}`} />
+  <link rel="alternate" hreflang="x-default" href={canonical} />
+
+  <!-- Manifest & PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#B67B59" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="صيانة مطابخ الدمام" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Google Fonts - Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": siteUrl
+      },
+      ...(page && page !== 'home' ? [{
+        "@type": "ListItem",
+        "position": 2,
+        "name": title.split('|')[0].trim(),
+        "item": canonical
+      }] : [])
+    ]
+  })} />
+
+  <!-- Dark Mode Init Script (runs before render to prevent flash) -->
+  <script is:inline>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var theme = saved || preferred;
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Language Init Script -->
+  <script is:inline>
+    (function() {
+      var lang = localStorage.getItem('lang') || 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
+
+</head>
+<body>
+  <slot name="header" />
+
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <slot name="footer" />
+
+  <!-- Bilingual + Dark Mode JS -->
+  <script is:inline>
+    // =============== DARK MODE ===============
+    function initDarkMode() {
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      var html = document.documentElement;
+
+      function setTheme(t) {
+        html.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+        var icon = document.getElementById('theme-icon');
+        if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙';
+      }
+
+      setTheme(html.getAttribute('data-theme') || 'light');
+
+      btn.addEventListener('click', function() {
+        var current = html.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+
+    // =============== BILINGUAL ===============
+    function initBilingual() {
+      var btn = document.getElementById('lang-toggle');
+      if (!btn) return;
+      var html = document.documentElement;
+
+      function applyLang(lang) {
+        html.lang = lang;
+        html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        localStorage.setItem('lang', lang);
+        btn.textContent = lang === 'ar' ? 'EN' : 'عر';
+
+        // Switch all bilingual elements
+        document.querySelectorAll('[data-ar]').forEach(function(el) {
+          el.textContent = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        });
+
+        // Switch all bilingual HTML elements
+        document.querySelectorAll('[data-ar-html]').forEach(function(el) {
+          el.innerHTML = lang === 'ar' ? el.getAttribute('data-ar-html') : el.getAttribute('data-en-html');
+        });
+
+        // Switch placeholder attributes
+        document.querySelectorAll('[data-ar-ph]').forEach(function(el) {
+          el.placeholder = lang === 'ar' ? el.getAttribute('data-ar-ph') : el.getAttribute('data-en-ph');
+        });
+      }
+
+      var savedLang = localStorage.getItem('lang') || 'ar';
+      applyLang(savedLang);
+
+      btn.addEventListener('click', function() {
+        var current = html.lang === 'ar' ? 'en' : 'ar';
+        applyLang(current);
+      });
+    }
+
+    // =============== MOBILE MENU ===============
+    function initMobileMenu() {
+      var toggle = document.getElementById('mobile-menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function() {
+        var isOpen = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        toggle.innerHTML = isOpen ? '✕' : '☰';
+      });
+
+      // Close on nav link click
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          menu.classList.remove('open');
+          toggle.innerHTML = '☰';
+        });
+      });
+    }
+
+    // =============== SMOOTH SCROLL ===============
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    // =============== STICKY HEADER ===============
+    function initStickyHeader() {
+      var header = document.getElementById('site-header');
+      if (!header) return;
+      window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+      }, { passive: true });
+    }
+
+    // =============== FAQ ACCORDION ===============
+    function initAccordion() {
+      document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var item = btn.closest('.faq-item');
+          var answer = item.querySelector('.faq-answer');
+          var isOpen = item.classList.contains('open');
+
+          // Close all
+          document.querySelectorAll('.faq-item.open').forEach(function(o) {
+            o.classList.remove('open');
+            o.querySelector('.faq-answer').style.maxHeight = '0';
+            o.querySelector('.faq-icon').textContent = '+';
+          });
+
+          // Open clicked if was closed
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            item.querySelector('.faq-icon').textContent = '−';
+          }
+        });
+      });
+    }
+
+    // Init all on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      initDarkMode();
+      initBilingual();
+      initMobileMenu();
+      initSmoothScroll();
+      initStickyHeader();
+      initAccordion();
+    });
+  </script>
+</body>
+</html>

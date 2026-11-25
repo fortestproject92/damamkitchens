@@ -1,0 +1,343 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+
+const projects = [
+  {
+    image: "/assets/7.jpg",
+    titleAr: "استبدال وتحديث مفصلات مطبخ هيدروليك كاملة",
+    titleEn: "Full Soft-Close Hydraulic Hinge Upgrade",
+    locationAr: "حي الشاطئ، الدمام",
+    locationEn: "Al Shatea, Dammam",
+    descAr: "تم فك 24 مفصلة قديمة تالفة واستبدالها بمفصلات هيدروليك ناعمة مع ضبط الفواصل هندسياً لتغلق بسلاسة وهدوء.",
+    descEn: "Replaced 24 worn-out hinges with soft-close hydraulic units and re-aligned all door gaps seamlessly.",
+    tagAr: "مفصلات هيدروليك",
+    tagEn: "Hydraulic Hinges"
+  },
+  {
+    image: "/assets/8.jpg",
+    titleAr: "إصلاح وتغيير سحابات أدراج ثقيلة رولمان بلي",
+    titleEn: "Heavy-Duty Ball-Bearing Drawer Slides",
+    locationAr: "حي الحزام الذهبي، الخبر",
+    locationEn: "Golden Belt, Khobar",
+    descAr: "معالجة خروج الأدراج عن مسارها وتغيير السكك التالفة بسكك سحب كامل تتحمل أواني الطبخ الثقيلة بسلاسة.",
+    descEn: "Fixed derailed drawers and installed full-extension heavy-duty rails for heavy cookware.",
+    tagAr: "سحابات وأدراج",
+    tagEn: "Drawer Slides"
+  },
+  {
+    image: "/assets/9.jpg",
+    titleAr: "وزن وضبط أبواب مطبخ ألمنيوم متداخلة",
+    titleEn: "Aluminum Kitchen Cabinet Door Alignment",
+    locationAr: "حي الفيصلية، الدمام",
+    locationEn: "Al Faisaliyah, Dammam",
+    descAr: "إعادة ضبط زوايا ومسافات الأبواب العلوية والسفلية بعد حدوث هبوط أدى إلى احتكاك الأبواب وصعوبة غلقها.",
+    descEn: "Precision re-alignment of top and bottom doors eliminating door rubbing and misalignment.",
+    tagAr: "وزن أبواب",
+    tagEn: "Door Alignment"
+  },
+  {
+    image: "/assets/10.jpg",
+    titleAr: "معالجة تلف الرطوبة وتدعيم قاعدة كابينة المجلى",
+    titleEn: "Under-Sink Water Damage Repair & Reinforcement",
+    locationAr: "حي الدانة، الظهران",
+    locationEn: "Al Danah, Dhahran",
+    descAr: "تركيب ألواح ألمنيوم معزولة مضادة للمياه، وتدعيم القوائم الهابطة وتثبيت عوازل سيليكون مانعة للتسرب.",
+    descEn: "Installed water-resistant composite boards and reinforced base legs with anti-mold silicone sealing.",
+    tagAr: "صيانة عامة",
+    tagEn: "General Repair"
+  },
+  {
+    image: "/assets/11.jpg",
+    titleAr: "تدعيم رفوف خزائن التخزين الداخلية بأوزان ثقيلة",
+    titleEn: "Heavy-Load Pantry Shelf Reinforcement",
+    locationAr: "حي المزروعية، الدمام",
+    locationEn: "Al Mazrouiyah, Dammam",
+    descAr: "تثبيت زوايا حديدية مدعمة لكل رف لمنع التقوس والكسر مع تأمين مسامير صلبة داخل الجدران.",
+    descEn: "Installed heavy-gauge angle steel supports preventing shelf warping under high weights.",
+    tagAr: "تدعيم رفوف",
+    tagEn: "Shelves"
+  },
+  {
+    image: "/assets/12.jpg",
+    titleAr: "تجديد شامل لمطبخ خشبي مع تغيير المقابض",
+    titleEn: "Comprehensive Wood Kitchen Refresh & Handle Update",
+    locationAr: "حي الجلوية، الدمام",
+    locationEn: "Al Jalawiyah, Dammam",
+    descAr: "صيانة وتزييت كافة المفصلات، وزن الفواصل، وتركيب مقابض مودرن أعطت المطبخ مظهراً جديداً وأنيقاً.",
+    descEn: "Lubricated all hinges, adjusted lines, and mounted sleek modern handles for a renewed appearance.",
+    tagAr: "تجديد شامل",
+    tagEn: "Full Refresh"
+  },
+  {
+    image: "/assets/13.jpg",
+    titleAr: "تركيب وصيانة مطابخ عصرية بالدمام",
+    titleEn: "Modern Kitchen Assembly & Service",
+    locationAr: "حي طيبة، الدمام",
+    locationEn: "Tayba, Dammam",
+    descAr: "تثبيت كامل الكبائن وضبط الأجهزة المدمجة بدقة هندسية عالية لضمان التوازن والاستقرار.",
+    descEn: "Full cabinet mounting and built-in appliances adjustment with precise balance.",
+    tagAr: "تركيب وصيانة",
+    tagEn: "Installation"
+  },
+  {
+    image: "/assets/14.jpg",
+    titleAr: "إصلاح قواطع وأبواب سحاب زجاجية",
+    titleEn: "Glass Sliding Door & Frame Repair",
+    locationAr: "حي العقربية، الخبر",
+    locationEn: "Al Aqrabiyah, Khobar",
+    descAr: "استبدال عجلات الانزلاق السفلية وتعديل المجرى العلوي للأبواب الزجاجية لتعمل بخفة وأمان.",
+    descEn: "Replaced bottom sliding rollers and re-tracked upper rails for light and secure movement.",
+    tagAr: "أبواب زجاج",
+    tagEn: "Glass Doors"
+  },
+  {
+    image: "/assets/15.jpg",
+    titleAr: "معالجة هبوط كبائن المطبخ العلوية وتثبيتها",
+    titleEn: "Upper Cabinet Sagging Fix & Anchoring",
+    locationAr: "حي النور، الدمام",
+    locationEn: "Al Noor, Dammam",
+    descAr: "تدعيم نقاط التثبيت الجدارية ببراغي صلبة ومثبتات خرسانية خاصة تمنع السقوط تماماً.",
+    descEn: "Reinforced wall anchoring points with heavy concrete expansion bolts eliminating sag risks.",
+    tagAr: "تدعيم وتثبيت",
+    tagEn: "Anchoring"
+  },
+  {
+    image: "/assets/16.jpg",
+    titleAr: "صيانة ووزن أبواب المطابخ الخشبية الكلاسيكية",
+    titleEn: "Classic Wood Cabinet Door Alignment",
+    locationAr: "حي الفاخرية، الدمام",
+    locationEn: "Al Fakhriyah, Dammam",
+    descAr: "إعادة وزن وضبط الفواصل ومفصلات الأبواب الخشبية القديمة لتعود وتغلق بإحكام وتناسق تام.",
+    descEn: "Re-aligning hinges and gaps on classic solid wood cabinets for seamless flush closure.",
+    tagAr: "وزن خشب",
+    tagEn: "Wood Alignment"
+  },
+  {
+    image: "/assets/17.jpg",
+    titleAr: "تغيير سحابات أدراج البهارات والملاعق الداخلية",
+    titleEn: "Spice & Cutlery Inner Drawer Slide Repair",
+    locationAr: "حي الراكة، الخبر",
+    locationEn: "Al Rakah, Khobar",
+    descAr: "استبدال السكك القديمة العالقة بسكك دفع سلسة ومقاومة للصدأ مريحة في الاستخدام اليومي.",
+    descEn: "Swapped jammed drawer runners with high-efficiency rust-proof glide rails.",
+    tagAr: "سحابات أدراج",
+    tagEn: "Drawer Slides"
+  }
+];
+---
+
+<Layout
+  title="معرض أعمالنا ونماذج الصيانة | صيانة مطابخ الدمام"
+  description="شاهد بالصور نماذج حية من أعمالنا المنفذة في صيانة مطابخ الألمنيوم والخشب، تبديل المفصلات الهيدروليكية وإصلاح الأدراج في الدمام والخبر والمنطقة الشرقية."
+  page="gallery"
+>
+  <Header slot="header" />
+
+  <section class="page-hero" style="background-image: url('/assets/Beige Brown and White Minimalist Smart Kitchens Pitch Deck Presentation.jpg');">
+    <div class="container">
+      <h1 data-ar="معرض أعمال ونماذج الصيانة" data-en="Maintenance Portfolio & Project Gallery">معرض أعمال ونماذج الصيانة</h1>
+      <p data-ar="نماذج حقيقية من مشاريع وأعمال صيانة المطابخ وتغيير المفصلات التي نفذناها بنجاح لعملائنا الكرام في الدمام والشرقية." data-en="Real examples of kitchen repairs and hinge upgrades successfully delivered to our clients in Dammam and Eastern Province.">
+        نماذج حقيقية من مشاريع وأعمال صيانة المطابخ وتغيير المفصلات التي نفذناها بنجاح لعملائنا الكرام في الدمام والشرقية.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        {projects.map((proj) => (
+          <div class="card gallery-card">
+            <div class="gallery-img-box">
+              <img
+                src={proj.image}
+                alt={proj.titleAr}
+                class="gallery-photo"
+                width="400"
+                height="300"
+                loading="lazy"
+              />
+              <span class="gallery-badge" data-ar={proj.tagAr} data-en={proj.tagEn}>{proj.tagAr}</span>
+            </div>
+
+            <div class="gallery-body">
+              <span class="gallery-loc">📍 <span data-ar={proj.locationAr} data-en={proj.locationEn}>{proj.locationAr}</span></span>
+              <h3 class="gallery-title" data-ar={proj.titleAr} data-en={proj.titleEn}>{proj.titleAr}</h3>
+              <p class="gallery-desc" data-ar={proj.descAr} data-en={proj.descEn}>{proj.descAr}</p>
+              
+              <div class="gallery-card-action">
+                <a
+                  href={`https://wa.me/966552854516?text=${encodeURIComponent(`مرحباً، أرغب في تنفيذ صيانة مشابهة لعمل: ${proj.titleAr}`)}`}
+                  class="btn btn-whatsapp gallery-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="طلب عمل مشابه"
+                >
+                  <span>💬</span>
+                  <span data-ar="طلب صيانة مماثلة" data-en="Request Similar Service">طلب صيانة مماثلة</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bottom Trust Note -->
+      <div class="gallery-note card">
+        <h3 data-ar="هل يعاني مطبخك من أي مشكلة مشابهة؟" data-en="Is your kitchen suffering from a similar issue?">هل يعاني مطبخك من أي مشكلة مشابهة؟</h3>
+        <p data-ar="أرسل لنا صورة المشكلة على الواتساب وسيقوم الفني بتشخيصها فوراً وتحديد القطع المطلوبة لحلها في زيارة واحدة." data-en="Send us a photo of the problem on WhatsApp, and our technician will diagnose it and arrive with the exact parts.">
+          أرسل لنا صورة المشكلة على الواتساب وسيقوم الفني بتشخيصها فوراً وتحديد القطع المطلوبة لحلها في زيارة واحدة.
+        </p>
+        <div class="gallery-note-actions">
+          <a href="https://wa.me/966552854516?text=مرحباً، أود إرسال صورة عطل المطبخ للمعاينة" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+            <span>📸</span>
+            <span data-ar="أرسل صورة العطل عبر واتساب" data-en="Send Photo via WhatsApp">أرسل صورة العطل عبر واتساب</span>
+          </a>
+          <a href="tel:+966552854516" class="btn btn-secondary btn-lg">
+            <span>📞</span>
+            <span data-ar="اتصل الآن: 0552854516" data-en="Call Now: 0552854516">اتصل الآن: 0552854516</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gallery-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-img-box {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: var(--color-secondary);
+  overflow: hidden;
+}
+
+.gallery-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-photo {
+  transform: scale(1.06);
+}
+
+.gallery-badge {
+  position: absolute;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  background: rgba(182, 123, 89, 0.92);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.gallery-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gallery-loc {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-title {
+  font-size: 1.15rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .gallery-title {
+  color: var(--color-accent);
+}
+
+.gallery-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+  text-align: start;
+}
+
+.gallery-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.85rem;
+  padding: 0.6rem 1rem;
+}
+
+.gallery-note {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(58,37,32,0.06), rgba(182,123,89,0.06));
+  border: 2px dashed var(--color-primary);
+}
+
+.gallery-note h3 {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .gallery-note h3 {
+  color: var(--color-accent);
+}
+
+.gallery-note p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.gallery-note-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-desc { text-align: center; }
+}
+</style>

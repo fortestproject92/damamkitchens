@@ -1,0 +1,219 @@
+---
+---
+<!-- Branded Identity Card (Digital Business Card) -->
+<div class="identity-card-wrapper">
+  <div class="identity-card glass">
+    <div class="card-chip"></div>
+    <div class="card-brand">
+      <img src="/assets/logo/2.png" alt="شعار صيانه مطابخ الدمام" class="card-logo" width="130" height="52" loading="lazy" />
+      <span class="card-verified">✓ موثق رسمي</span>
+    </div>
+    
+    <div class="card-details">
+      <h3 class="card-title" data-ar="صيانه مطابخ وإصلاح مفصلات في الدمام" data-en="Kitchen Maintenance & Hinge Repair in Dammam">
+        صيانه مطابخ وإصلاح مفصلات في الدمام
+      </h3>
+      <p class="card-subtitle" data-ar="فني معتمد - خدمات احترافية بالدمام والشرقية" data-en="Certified Technician - Professional Services in Dammam & EP">
+        فني معتمد - خدمات احترافية بالدمام والشرقية
+      </p>
+      
+      <div class="card-info-list">
+        <div class="card-info-row">
+          <span class="info-label" data-ar="الرقم المباشر:" data-en="Direct Line:">الرقم المباشر:</span>
+          <a href="tel:+966552854516" class="info-val phone-val" dir="ltr">0552854516</a>
+        </div>
+        <div class="card-info-row">
+          <span class="info-label" data-ar="الموقع الرسمي:" data-en="Official Domain:">الموقع الرسمي:</span>
+          <span class="info-val" dir="ltr">damamkitchens.com</span>
+        </div>
+        <div class="card-info-row">
+          <span class="info-label" data-ar="ساعات التغطية:" data-en="Working Hours:">ساعات التغطية:</span>
+          <span class="info-val" data-ar="7:00 ص - 2:00 بعد منتصف الليل" data-en="7:00 AM - 2:00 AM">7:00 ص - 2:00 بعد منتصف الليل</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-actions">
+      <a href="tel:+966552854516" class="btn btn-secondary card-btn" aria-label="اتصال">
+        <span>📞</span>
+        <span data-ar="اتصال فوري" data-en="Call Now">اتصال فوري</span>
+      </a>
+      <a href="https://wa.me/966552854516?text=مرحباً، أود حجز فني صيانة مطابخ" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp card-btn" aria-label="واتساب">
+        <span>💬</span>
+        <span data-ar="محادثة واتساب" data-en="WhatsApp">محادثة واتساب</span>
+      </a>
+      <button class="btn btn-outline card-btn copy-btn" id="copy-card-btn" type="button" aria-label="نسخ البيانات">
+        <span>📋</span>
+        <span id="copy-btn-text" data-ar="نسخ البيانات" data-en="Copy Info">نسخ البيانات</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    var copyBtn = document.getElementById('copy-card-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function() {
+        var textToCopy = "صيانه مطابخ وإصلاح مفصلات في الدمام\nالموقع: https://www.damamkitchens.com\nرقم التواصل: 0552854516\nساعات العمل: 7:00 ص - 2:00 بعد منتصف الليل";
+        navigator.clipboard.writeText(textToCopy).then(function() {
+          var label = document.getElementById('copy-btn-text');
+          if (label) {
+            var oldText = label.textContent;
+            label.textContent = "تم النسخ بنجاح! ✓";
+            setTimeout(function() {
+              label.textContent = oldText;
+            }, 2500);
+          }
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+.identity-card-wrapper {
+  max-width: 540px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.identity-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 61, 94, 0.95), rgba(181, 102, 26, 0.85));
+  color: #ffffff;
+  border-radius: var(--border-radius-xl);
+  padding: 2.2rem;
+  box-shadow: 0 20px 50px rgba(28, 61, 94, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.identity-card:hover {
+  transform: translateY(-6px) rotateX(2deg);
+  box-shadow: 0 24px 60px rgba(181, 102, 26, 0.4);
+}
+
+.card-chip {
+  position: absolute;
+  top: 1.8rem;
+  inset-inline-end: 2rem;
+  width: 44px;
+  height: 32px;
+  background: linear-gradient(135deg, #E8B84B, #f9df88);
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.6);
+}
+
+.card-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.card-verified {
+  font-size: 0.75rem;
+  background: rgba(232, 184, 75, 0.25);
+  color: #f9df88;
+  border: 1px solid #E8B84B;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  color: #ffffff;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+.card-info-list {
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.info-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.info-val {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.phone-val {
+  color: #f9df88;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.card-btn {
+  flex: 1 1 calc(33.333% - 0.65rem);
+  min-width: 120px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.copy-btn {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.copy-btn:hover {
+  background: #fff;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .identity-card {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .card-brand {
+    justify-content: center;
+  }
+  .card-actions {
+    flex-direction: column;
+  }
+  .card-btn {
+    width: 100%;
+  }
+}
+</style>

@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+
+const areas = [
+  {
+    cityAr: "مدينة الدمام (التغطية الكاملة لكافة الأحياء)",
+    cityEn: "Dammam City (Full District Coverage)",
+    speedAr: "وصول خلال 20 - 30 دقيقة",
+    speedEn: "Arrival within 20 - 30 mins",
+    descAr: "نوفر ورشة متنقلة متكاملة تجوب جميع أحياء الدمام لتقديم خدمات الصيانة الفورية للمفصلات وسحابات الأدراج والخزائن.",
+    descEn: "A mobile workshop covering all Dammam districts for instant on-site hinge, drawer, and cabinet repairs.",
+    districtsAr: [
+      "حي الشاطئ", "حي الفيصلية", "حي الجلوية", "حي النور", "حي المزروعية", "حي طيبة",
+      "حي الفاخرية", "حي العزيزية", "ضاحية الملك فهد", "حي أحد", "حي المنار", "حي الروضة",
+      "حي غرناطة", "حي البادية", "حي القادسية", "حي الزهور", "حي الحمراء", "حي الأثير"
+    ],
+    districtsEn: [
+      "Al Shatea", "Al Faisaliyah", "Al Jalawiyah", "Al Noor", "Al Mazrouiyah", "Tayba",
+      "Al Fakhriyah", "Al Aziziyah", "King Fahd Suburb", "Uhud", "Al Manar", "Al Rawdah",
+      "Granada", "Al Badiyah", "Al Qadisiyah", "Al Zuhoor", "Al Hamra", "Al Atheer"
+    ]
+  },
+  {
+    cityAr: "مدينة الخبر والظهران",
+    cityEn: "Khobar & Dhahran",
+    speedAr: "وصول خلال 25 - 35 دقيقة",
+    speedEn: "Arrival within 25 - 35 mins",
+    descAr: "خدمة صيانة دورية وطارئة لمطابخ الشقق والفلل في الخبر والظهران بأعلى مواصفات الإتقان.",
+    descEn: "Regular and emergency kitchen maintenance for apartments and villas across Khobar and Dhahran.",
+    districtsAr: [
+      "الحزام الذهبي", "الحزام الأخضر", "العقربية", "الراكة الجنوبية", "الراكة الشمالية",
+      "حي العليا", "حي الخزامى", "حي الجسر", "حي التحلية", "حي الدانة", "حي الدوحة", "حي القشلة"
+    ],
+    districtsEn: [
+      "Golden Belt", "Green Belt", "Al Aqrabiyah", "South Rakah", "North Rakah",
+      "Al Olaya", "Al Khuzama", "Al Jisr", "Al Tahlia", "Al Danah", "Al Doha", "Al Qushlah"
+    ]
+  },
+  {
+    cityAr: "محافظة القطيف وسيهات وعنك",
+    cityEn: "Qatif, Saihat & Anak",
+    speedAr: "وصول خلال 30 - 40 دقيقة",
+    speedEn: "Arrival within 30 - 40 mins",
+    descAr: "صيانة شاملة لكافة مطابخ الألمنيوم والخشب وتغيير المفصلات التالفة بقطع غيار أصلية ومكفولة.",
+    descEn: "Comprehensive repair for all aluminum and wooden kitchens with genuine guaranteed hardware.",
+    districtsAr: [
+      "سيهات", "عنك", "النابية", "حي المجيدية", "حي الشاطئ بالقطيف", "حي التركيا",
+      "تاروت", "صفوى", "أم الساهك", "القديح", "العوامية", "حي الدخل المحدود"
+    ],
+    districtsEn: [
+      "Saihat", "Anak", "Al Nabiyah", "Al Majediyah", "Qatif Corniche", "Al Turkia",
+      "Tarout", "Safwa", "Umm Al Sahik", "Al Qudaih", "Al Awamiyah", "Limited Income Dist."
+    ]
+  },
+  {
+    cityAr: "مدينة الجبيل (البلد والصناعية)",
+    cityEn: "Jubail (City & Industrial)",
+    speedAr: "تنسيق مسبق وسرعة حضور",
+    speedEn: "Prior scheduling & fast dispatch",
+    descAr: "نلبي طلبات سكان الجبيل الصناعية ومخططات الجبيل البلد لصيانة وتحديث مفصلات وسحابات المطابخ.",
+    descEn: "Serving residents of Jubail Industrial and Jubail downtown for full kitchen hinge and drawer upgrades.",
+    districtsAr: [
+      "حي الفردوس", "حي الفناتير", "حي الدفي", "حي جلمودة", "حي الحويلات",
+      "حي الذهب", "الجبيل البلد", "حي المرقاب", "مخطط الحمراء", "حي الواحة"
+    ],
+    districtsEn: [
+      "Al Ferdous", "Al Fanateer", "Al Deffi", "Jalmudah", "Al Huwailat",
+      "Al Dahab", "Jubail Downtown", "Al Marqab", "Al Hamra Plan", "Al Wahah"
+    ]
+  },
+  {
+    cityAr: "رأس تنورة وبقيق والقرى الشرقية",
+    cityEn: "Ras Tanura, Abqaiq & Nearby Towns",
+    speedAr: "زيارات مجدولة منتظمة",
+    speedEn: "Regular scheduled visits",
+    descAr: "نوفر حلول الصيانة المتنقلة للمطابخ المنزلية في رأس تنورة وبقيق والمناطق القريبة بأعلى دقة.",
+    descEn: "Delivering mobile kitchen repair solutions across Ras Tanura, Abqaiq and surrounding areas.",
+    districtsAr: [
+      "رأس تنورة (رحيمة)", "حي النجمة", "حي الدانة برأس تنورة", "بقيق", "عين دار", "العيون"
+    ],
+    districtsEn: [
+      "Ras Tanura (Rahimah)", "Al Najmah", "Al Danah Ras Tanura", "Abqaiq", "Ain Dar", "Al Oyoon"
+    ]
+  }
+];
+---
+
+<Layout
+  title="مناطق الخدمة وتغطية صيانة المطابخ | الدمام والمنطقة الشرقية"
+  description="فني صيانة مطابخ متنقل يغطي كافة أحياء الدمام، الخبر، الظهران، القطيف، وسيهات. سرعة في التجاوب وحضور فوري لموقعك مجهزاً بكافة المفصلات والمعدات."
+  page="areas"
+>
+  <Header slot="header" />
+
+  <section class="page-hero" style="background-image: url('/assets/13.jpg');">
+    <div class="container">
+      <h1 data-ar="مناطق الخدمة والتغطية في الشرقية" data-en="Service Areas & Eastern Province Coverage">مناطق الخدمة والتغطية في الشرقية</h1>
+      <p data-ar="ورشة صيانة متنقلة تصلك أينما كنت في الدمام وكافة مدن ومحافظات المنطقة الشرقية بأسرع وقت." data-en="A mobile repair workshop arriving at your doorstep anywhere in Dammam and Eastern Province in record time.">
+        ورشة صيانة متنقلة تصلك أينما كنت في الدمام وكافة مدن ومحافظات المنطقة الشرقية بأسرع وقت.
+      </p>
+    </div>
+  </section>
+
+  <!-- AREAS LIST -->
+  <section class="section">
+    <div class="container">
+      <div class="areas-wrapper">
+        {areas.map((area) => (
+          <article class="card area-card">
+            <div class="area-header">
+              <div>
+                <h2 class="area-city-title">📍 <span data-ar={area.cityAr} data-en={area.cityEn}>{area.cityAr}</span></h2>
+                <span class="area-speed-tag">⚡ <span data-ar={area.speedAr} data-en={area.speedEn}>{area.speedAr}</span></span>
+              </div>
+              <a
+                href={`https://wa.me/966552854516?text=${encodeURIComponent(`مرحباً، أحتاج فني صيانة مطابخ في: ${area.cityAr}`)}`}
+                class="btn btn-whatsapp area-cta-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>💬</span>
+                <span data-ar="طلب فني لمنطقتك" data-en="Request Technician">طلب فني لمنطقتك</span>
+              </a>
+            </div>
+
+            <p class="area-desc" data-ar={area.descAr} data-en={area.descEn}>{area.descAr}</p>
+
+            <div class="area-districts">
+              <strong data-ar="أبرز الأحياء المشمولة بالتغطية الفورية:" data-en="Key Districts Covered Instantly:">أبرز الأحياء المشمولة بالتغطية الفورية:</strong>
+              <div class="districts-tags">
+                {area.districtsAr.map((dAr, i) => (
+                  <span class="district-pill" data-ar={dAr} data-en={area.districtsEn[i]}>{dAr}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Live Dispatch Banner -->
+      <div class="dispatch-banner card">
+        <h3 data-ar="هل حيّك أو منطقتك غير مذكورة في القائمة أعلاه؟" data-en="Is your neighborhood not listed above?">هل حيّك أو منطقتك غير مذكورة في القائمة أعلاه؟</h3>
+        <p data-ar="لا تقلق! تغطيتنا تشمل كافة أنحاء المنطقة الشرقية. تواصل معنا مباشرة وحدد موقعك وسنصل إليك في أقرب فرصة." data-en="Don't worry! We cover the entire Eastern Province. Reach out directly with your location and we'll dispatch a technician promptly.">
+          لا تقلق! تغطيتنا تشمل كافة أنحاء المنطقة الشرقية. تواصل معنا مباشرة وحدد موقعك وسنصل إليك في أقرب فرصة.
+        </p>
+        <div class="dispatch-actions">
+          <a href="https://wa.me/966552854516?text=مرحباً، أود الاستفسار عن التغطية في موقعي" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+            <span>💬</span>
+            <span data-ar="أرسل موقعك عبر واتساب" data-en="Send Location on WhatsApp">أرسل موقعك عبر واتساب</span>
+          </a>
+          <a href="tel:+966552854516" class="btn btn-secondary btn-lg">
+            <span>📞</span>
+            <span data-ar="اتصل هاتفياً: 0552854516" data-en="Call Us: 0552854516">اتصل هاتفياً: 0552854516</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.areas-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.area-card {
+  padding: 2.5rem;
+  border-left: 5px solid var(--color-primary);
+}
+
+[dir="rtl"] .area-card {
+  border-left: 1px solid var(--border-color);
+  border-right: 5px solid var(--color-primary);
+}
+
+.area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.area-city-title {
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.35rem;
+}
+
+[data-theme="dark"] .area-city-title {
+  color: var(--color-accent);
+}
+
+.area-speed-tag {
+  display: inline-block;
+  background: rgba(37, 211, 102, 0.12);
+  color: #128C7E;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+[data-theme="dark"] .area-speed-tag {
+  color: #25D366;
+}
+
+.area-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: start;
+}
+
+.area-districts strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .area-districts strong {
+  color: #fff;
+}
+
+.districts-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.district-pill {
+  background: var(--bg-section-alt);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  transition: var(--transition-fast);
+}
+
+.district-pill:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.dispatch-banner {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(28,61,94,0.08), rgba(181,102,26,0.08));
+}
+
+.dispatch-banner h3 {
+  font-size: 1.6rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .dispatch-banner h3 {
+  color: var(--color-accent);
+}
+
+.dispatch-banner p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.dispatch-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .area-card { padding: 1.5rem; text-align: center; }
+  .area-header { justify-content: center; }
+  .area-desc { text-align: center; }
+  .area-districts strong { text-align: center; }
+  .districts-tags { justify-content: center; }
+  .area-cta-btn { width: 100%; justify-content: center; }
+}
+</style>
