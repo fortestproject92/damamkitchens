@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import IdentityCard from '../../components/IdentityCard.astro';
+
+const siteUrl = 'https://www.damamkitchens.com';
+const areaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "صيانة وتركيب مطابخ حي العارض",
+  "serviceType": "صيانة وتفصيل وتركيب مطابخ",
+  "description": "فني مطابخ في حي العارض بالدمام: صيانة، فك وتركيب، تفصيل على المقاس، مفصلات هيدروليك، ورخام مطابخ. تغطية طريق الأمير محمد بن سلمان يوميًا 7ص-2ص. 0552854516",
+  "areaServed": {
+    "@type": "Place",
+    "name": "حي العارض، الدمام",
+    "address": { "@type": "PostalAddress", "addressLocality": "الدمام", "addressRegion": "المنطقة الشرقية", "addressCountry": "SA" }
+  },
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "فني مطابخ وصيانة مطابخ بالدمام",
+    "telephone": "+966552854516",
+    "url": siteUrl,
+    "image": siteUrl + "/img/logo-mark-360.jpg"
+  },
+  "url": siteUrl + "/areas/alarid/"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "أحياء الدمام", "item": siteUrl + "/areas/" },
+    { "@type": "ListItem", "position": 3, "name": "حي العارض", "item": siteUrl + "/areas/alarid/" }
+  ]
+};
+---
+
+<Layout
+  title="صيانة وتفصيل وتركيب مطابخ حي العارض بالدمام | فني مطابخ حي العارض"
+  description="فني مطابخ في حي العارض بالدمام: صيانة، فك وتركيب، تفصيل على المقاس، مفصلات هيدروليك، ورخام مطابخ. تغطية طريق الأمير محمد بن سلمان يوميًا 7ص-2ص. 0552854516"
+  page="areas"
+  ogImage="/img/kitchen-project-09-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={1400}
+>
+  <Header slot="header" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(areaSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <section class="page-hero" style="background-image: url('/img/kitchen-project-09-1400.jpg');">
+    <div class="container">
+      <nav class="crumbs" aria-label="مسار التنقل">
+        <a href="/">الرئيسية</a> / <a href="/areas/">أحياء الدمام</a> / <span>حي العارض</span>
+      </nav>
+      <h1>صيانة وتفصيل وتركيب مطابخ حي العارض</h1>
+      <p>فني مطابخ يغطي حي العارض والقرى المجاورة، من حي شمالي حديث نسبيًا بفلل وشقق تمتاز بمساحات مطابخ أكبر</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p>حي العارض من أحياء الدمام التي تختلف فيها احتياجات المطبخ عن بقية المدينة. حي شمالي حديث نسبيًا بفلل وشقق تمتاز بمساحات مطابخ أكبر. هذا الاختلاف ليس تفصيلًا شكليًا — هو ما يحدد أي الأعطال تظهر أولًا، وأي قطع الغيار تصلح، وكيف يجب أن يكون التركيب.</p>
+      <p>فلل حديثة وشقق واسعة في حي العارض يعني أن معظم المطابخ التي نصلحها هنا لها نمط متكرر من المشكلات. أهمها: المطابخ الكبيرة تحتاج حامل سطح كافٍ للرخام. أكثر انحناء نراه في الحي سببه حامل غير كافٍ تحت سطح طويل، فيبدأ الرخام بالانحناء ثم يشرخ.</p>
+      <p>قبل تركيب سطح رخام طويل نفحص الحامل ونضيف دعامة وسطية إن كان الامتداد يزيد على 120 سم. تكلفة الدعامة أقل بكثير من تغيير السطح.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid-2 split">
+        <div>
+          <h2 class="section-title">ما نقدمه في حي العارض</h2>
+          <ul class="checklist">
+            <li>صيانة مطابخ الألمنيوم والخشب و MDF داخل المنزل</li>
+            <li>استبدال المفصلات الهيدروليكية وضبط زوايا الأبواب</li>
+            <li>إصلاح واستبدال سكك الأدراج ورولمان السحب</li>
+            <li>فك وتركيب ونقل المطابخ مع تعديل المقاسات</li>
+            <li>تعديل وقص وتفصيل دواليب إضافية على المقاس</li>
+            <li>تغيير وصيانة رخام المطابخ ومجالي الأحواض</li>
+            <li>تركيب وصيانة مطابخ إيكيا والأنظمة الجاهزة</li>
+          </ul>
+          <p style="margin-top:1.5rem;color:var(--text-secondary);line-height:1.8">
+            نصل إلى حي العارض يوميًا من الساعة 7 صباحًا حتى 2 بعد منتصف الليل، ولا نطلب عربونًا قبل المعاينة.
+          </p>
+        </div>
+        <div class="split-media">
+          <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-09-1400.webp 1400w, /img/kitchen-project-09-900.webp 900w, /img/kitchen-project-09-600.webp 600w, /img/kitchen-project-09-400.webp 400w" sizes="(max-width: 640px) 92vw, 46vw" />
+            <img src="/img/kitchen-project-09-900.jpg" srcset="/img/kitchen-project-09-1400.jpg 1400w, /img/kitchen-project-09-900.jpg 900w, /img/kitchen-project-09-600.jpg 600w, /img/kitchen-project-09-400.jpg 400w" sizes="(max-width: 640px) 92vw, 46vw" alt="مطبخ منفذ في حي العارض بالدمام" width="600" height="600" loading="lazy" decoding="async" class="split-img card" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">أقرب الأحياء إليك</h2>
+        <p class="section-subtitle">نغطي حي العارض وكل الأحياء المجاورة بنفس سرعة الاستجابة.</p>
+      </div>
+      <div class="area-chips">
+        <a href="/areas/dahiyat-almalk-fahd/">ضاحية الملك فهد</a>
+        <a href="/areas/almuraikabat/">حي المراكبات</a>
+        <a href="/areas/almanar/">حي المنار</a>
+        <a href="/areas/">كل أحياء الدمام</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-box">
+        <h2>تحتاج فني مطابخ في حي العارض؟</h2>
+        <p>أرسل صورة للعطل على واتساب وسنخبرك بالسبب المتوقع والتكلفة قبل الحضور.</p>
+        <div class="cta-btns">
+          <a href="tel:+966552854516" class="btn btn-primary btn-lg">📞 0552854516</a>
+          <a href="https://wa.me/966552854516?text=مرحباً، أحتاج فني مطابخ في حي العارض بالدمام" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">💬 واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <IdentityCard />
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.crumbs { font-size: .875rem; color: rgba(255,255,255,.75); margin-bottom: 1rem; }
+.crumbs a { color: rgba(255,255,255,.9); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs span { color: #fff; font-weight: 700; }
+
+.prose { max-width: 840px; margin: 0 auto; }
+.prose p { color: var(--text-secondary); line-height: 1.95; font-size: 1.06rem; margin-bottom: 1.4rem; text-align: start; }
+
+.split { align-items: center; gap: 2.5rem; }
+.split-img { width: 100%; height: auto; display: block; object-fit: cover; padding: 0; }
+
+.checklist { list-style: none; padding: 0; margin: 1.2rem 0 0; }
+.checklist li { position: relative; padding-inline-start: 1.9rem; margin-bottom: .85rem; color: var(--text-secondary); line-height: 1.7; }
+.checklist li::before { content: "✓"; position: absolute; inset-inline-start: 0; top: 0; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; font-size: .72rem; font-weight: 900; }
+
+.area-chips { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+.area-chips a { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); padding: .7rem 1.3rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: .92rem; transition: var(--transition); }
+.area-chips a:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); transform: translateY(-2px); }
+
+.cta-box { background: var(--bg-section-alt); border-radius: var(--border-radius-xl); padding: 3rem 2rem; text-align: center; border: 1px solid var(--border-color); }
+.cta-box h2 { font-size: 1.7rem; margin-bottom: .8rem; color: var(--color-secondary); }
+[data-theme="dark"] .cta-box h2 { color: var(--color-accent); }
+.cta-box p { color: var(--text-secondary); margin-bottom: 1.6rem; line-height: 1.7; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .prose p { text-align: center; }
+}
+</style>

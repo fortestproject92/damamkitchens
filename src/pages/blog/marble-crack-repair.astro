@@ -1,0 +1,228 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+
+const siteUrl = 'https://www.damamkitchens.com';
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "شرخ في رخام المطبخ — معالجة أم تبديل؟",
+  "description": "ليست كل الشروخ متشابهة. بعضها يعود بعد أسبوعين بالسيليكون، وبعضها يعود حتى بعد التلميع. الفرق في سبب الشرخ لا في أساليب ملئه.",
+  "image": [siteUrl + "/img/kitchen-project-11-1400.jpg"],
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02",
+  "author": {
+    "@type": "Organization",
+    "name": "فني مطابخ وصيانة مطابخ بالدمام",
+    "url": siteUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "فني مطابخ وصيانة مطابخ بالدمام",
+    "logo": { "@type": "ImageObject", "url": siteUrl + "/img/logo-mark-360.jpg" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": siteUrl + "/blog/marble-crack-repair/" },
+  "articleSection": "دليل الصيانة",
+  "inLanguage": "ar",
+  "wordCount": 610
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "المدونة", "item": siteUrl + "/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "شرخ في رخام المطبخ — معالجة أم تبديل؟", "item": siteUrl + "/blog/marble-crack-repair/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [    {
+      "@type": "Question",
+      "name": "هل يمكن إصلاح شرخ في مجال الحوض؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "إذا كان الشرخ في المجال نفسه، فالمنطقة تحتاج استبدالًا عادة لأنها تحت ضغط الماء باستمرار. الشرخ في التصريف لا يُعاد ترميمه." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل الإصلاح بالراتنج مرئي؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "عندما يُنجز بمحترفية، يكون غير مرئي إلا عند الفحص القريب. الأهم من اللون هو سُمْك الطبقة: راتنج رقيق جدًا سيختفي مع أول تلميع." }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف أمنع شرخًا آخر؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "ثلاث خطوات: قاعدة حرارية تحت الأواني الساخنة، إضافة دعامة للامتداد الأطول من 120 سم، والعزل الدوري للسطح." }
+    }]
+};
+---
+
+<Layout
+  title="شرخ الرخام: متى يُصلح ومتى يجب تغييره؟ | صيانة مطابخ الدمام"
+  description="ليست كل الشروخ متشابهة. بعضها يعود بعد أسبوعين بالسيليكون، وبعضها يعود حتى بعد التلميع. الفرق في سبب الشرخ لا في أساليب ملئه."
+  page="blog"
+  ogImage="/img/kitchen-project-11-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={1400}
+>
+  <Header slot="header" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="page-hero" style="background-image: url('/img/kitchen-project-11-1400.jpg');">
+    <div class="container">
+      <nav class="crumbs" aria-label="مسار التنقل">
+        <a href="/">الرئيسية</a> / <a href="/blog/">المدونة</a> / <span>دليل الصيانة</span>
+      </nav>
+      <h1>شرخ في رخام المطبخ — معالجة أم تبديل؟</h1>
+      <p>ليست كل الشروخ متشابهة. بعضها يعود بعد أسبوعين بالسيليكون، وبعضها يعود حتى بعد التلميع. الفرق في سبب الشرخ لا في أساليب ملئه.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-wrap">
+      <div class="art-meta-bar">
+        <span class="badge">دليل الصيانة</span>
+        <span>📅 2026-11-02RA</span>
+        <span>⏱️ قراءة 4 دقائق</span>
+      </div>
+
+      <div class="art-body">
+                <p>عندما يظهر شرخ في رخام المطبخ، رد الفعل الأول هو البحث عن شيء يملؤه. هذا هو الخطأ الأول. الشرخ عرض، وملؤه قبل معرفة سببه يعني أن الشرخ سيعود في مكانه أو بجواره.</p>
+        <h2>أسباب الشرخ الأربعة</h2>
+        <p>الأول: حركة الشبكة. الوحدات تحت السطح تتحرك قليلًا مع الاستخدام، فتنقل هذه الحركة إلى السطح الذي لا يتحرك. النتيجة شرخ عرضي طويل يبدأ من حافة.</p>
+        <p>الثاني: التمدد الحراري. وضع قدر ساخن مباشرة على الرخام الصناعي يسبب تمددًا موضعيًا في الجزء الساخن فقط، فينشأ إجهاد داخلي ينتهي بشرخ عند التبريد.</p>
+        <p>الثالث: حامل ضعيف. السطح الطويل الذي يمتد أكثر من 120 سم دون دعامة وسطية ينحني قليلًا تحت الوزن. الانحناء المستمر يسبب شرخًا طوليًا في المنتصف.</p>
+        <p>الرابع: حادث. شيء سقط بقوة، أو صدمة عند التركيب. هذه أسهل حالة لأن السبب انتهى بانتهاء الحادث.</p>
+        <h2>التشخيص: كيف تعرف السبب</h2>
+        <p>ضع يدك على السطح على جانبي الشرخ واضغط برفق. إذا شعرت أن الجانبين يتحركان بشكل مستقل، فالسطح غير مستند جيدًا — وهذا يعني أن السبب هو الحامل أو الشبكة، لا الحادث.</p>
+        <p>انظر إلى اتجاه الشرخ. الشرخ الذي يبدأ من حافة ويتجه للداخل بشكل أفقي غالبًا نتيجة حركة. الشرخ الذي يبدأ من نقطة ويشع منها غالبًا نتيجة ضربة أو حرارة موضعية.</p>
+        <h2>متى يكون الإصلاح مجديًا</h2>
+        <p>إذا كان الشرخ في منطقة صغيرة، ولم يتوغل إلى الخشب تحته، فلا توجد حركة في الشبكة — فالإصلاح مجدٍ. الطريقة الصحيحة تُسمى "الترميم بالرَاتنج": يُحقن بقع من راتنج بلون الرخام ثم يُجفّف ويُلمّع فيصبح غير مرئي تقريبًا.</p>
+        <p>هذه الطريقة أفضل بكثير من السيليكون، لأن الراتنج يبني رابطة صلبة مع المادة، لا يرتمي فوقها. السيليكون يبقى مرنًا فيتحرك مع الوقت ويسمح للشرخ بالانتشار.</p>
+        <h2>متى يجب التغيير</h2>
+        <p>ثلاث حالات تحتاج تبديلًا لا إصلاحًا. الأولى: الشرخ في مجال الحوض مع تفتت الخشب تحته — هذه ليست مشكلة سطح، بل مشكلة رطوبة تحتاج معالجة كلية.</p>
+        <p>الثانية: شرخ يمتد لأكثر من نصف عرض السطح. ترميمه سيكون مرئيًا، والحركة ستعود إليه.</p>
+        <p>الثالثة: شرخ متكرر في منطقة واحدة. الشروخ المتكررة في نفس المكان هي رسالة من الشبكة: هناك خلل هيكلي لا يُصلح بملء سطحه.</p>
+        <h2>إضافة ضرورية بعد الإصلاح</h2>
+        <p>أي إصلاح شرخ يجب أن يُنهى بعزل السطح. الرخام الطبيعي مسامي، والصناعي قد تفقد طبقته الواقية مع التلميع. طبقة عزل بعد الإصلاح تُبطئ تشرب السوائل وتمنع الشرخ من العودة بسبب تمدد الرطوبة.</p>
+        <p>هذه خطوة صغيرة يهملها أغلب من يعمل الإصلاح السريع، وهي الفرق بين إصلاح يدوم سنتين وإصلاح يدوم خمسًا.</p>
+      </div>
+
+      <div class="takeaways-box">
+        <h2>أبرز ما في المقال</h2>
+        <ul>
+                    <li>لا تملأ الشرخ قبل تحديد السبب — الإصلاح بلا تشخيص يعود.</li>
+          <li>اضغط على جانبي الشرخ: التحرك المستقل يعني مشكلة حامل.</li>
+          <li>الراتنج المُحقون أفضل من السيليكون لأنه يبني رابطة صلبة.</li>
+          <li>الشرخ المتكرر في نفس الموقع يعني خللًا هيكليًا لا سطحيًا.</li>
+        </ul>
+      </div>
+
+      <div class="art-cta">
+        <h2>مطبخك يعاني من نفس المشكلة؟</h2>
+        <p>أرسل صورة على واتساب، وسنخبرك بالسبب المحتمل والتكلفة قبل الحضور. الفحص الهاتفي مجاني.</p>
+        <div class="cta-btns">
+          <a href="tel:+966552854516" class="btn btn-primary btn-lg">📞 0552854516</a>
+          <a href="https://wa.me/966552854516?text=مرحباً، قرأت مقال شرخ في رخام المطبخ — معالجة أم تبديل؟ وأود استشارة" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">💬 واتساب</a>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <h2>أسئلة مرتبطة</h2>
+                <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل يمكن إصلاح شرخ في مجال الحوض؟</button>
+          <div class="faq-a"><p>إذا كان الشرخ في المجال نفسه، فالمنطقة تحتاج استبدالًا عادة لأنها تحت ضغط الماء باستمرار. الشرخ في التصريف لا يُعاد ترميمه.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل الإصلاح بالراتنج مرئي؟</button>
+          <div class="faq-a"><p>عندما يُنجز بمحترفية، يكون غير مرئي إلا عند الفحص القريب. الأهم من اللون هو سُمْك الطبقة: راتنج رقيق جدًا سيختفي مع أول تلميع.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">كيف أمنع شرخًا آخر؟</button>
+          <div class="faq-a"><p>ثلاث خطوات: قاعدة حرارية تحت الأواني الساخنة، إضافة دعامة للامتداد الأطول من 120 سم، والعزل الدوري للسطح.</p></div>
+        </div>
+      </div>
+
+      <div class="related">
+        <h2>اقرأ أيضًا</h2>
+        <div class="related-grid">
+                    <a href="/blog/kitchen-hinge-failure-signs/">5 علامات تدل على تلف مفصلات المطبخ وضرورة صيانتها فورًا</a>
+          <a href="/blog/soft-close-hinges-investment/">مفصلات الهيدروليك الناعمة: لماذا تعتبر الاستثمار الأفضل لمطبخك؟</a>
+          <a href="/blog/sink-cabinet-moisture-dammam/">حماية خزانة حوض الجلي من الرطوبة والعفن بالدمام</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.crumbs { font-size: .875rem; color: rgba(255,255,255,.75); margin-bottom: 1rem; }
+.crumbs a { color: rgba(255,255,255,.9); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs span { color: #fff; font-weight: 700; }
+
+.article-wrap { max-width: 800px; margin: 0 auto; }
+
+.art-meta-bar { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; margin-bottom: 2rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border-color); font-size: .9rem; color: var(--text-muted); }
+
+.art-body h2 { font-size: 1.45rem; margin: 2.4rem 0 .9rem; color: var(--color-secondary); }
+[data-theme="dark"] .art-body h2 { color: var(--color-accent); }
+.art-body p { color: var(--text-secondary); line-height: 1.95; font-size: 1.06rem; margin-bottom: 1.3rem; text-align: start; }
+.art-body ul { margin: 0 0 1.5rem; padding-inline-start: 1.5rem; }
+.art-body li { color: var(--text-secondary); line-height: 1.85; margin-bottom: .65rem; }
+
+.takeaways-box { background: var(--bg-section-alt); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 1.8rem 2rem; margin: 2.5rem 0; }
+.takeaways-box h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-secondary); }
+[data-theme="dark"] .takeaways-box h2 { color: var(--color-accent); }
+.takeaways-box ul { list-style: none; padding: 0; margin: 0; }
+.takeaways-box li { position: relative; padding-inline-start: 1.9rem; margin-bottom: .8rem; color: var(--text-secondary); line-height: 1.7; }
+.takeaways-box li::before { content: "✓"; position: absolute; inset-inline-start: 0; top: 0; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; font-size: .72rem; font-weight: 900; }
+
+.art-cta { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius-xl); padding: 2.2rem; margin: 2.5rem 0; text-align: center; }
+.art-cta h2 { font-size: 1.35rem; margin-bottom: .7rem; color: var(--color-secondary); }
+[data-theme="dark"] .art-cta h2 { color: var(--color-accent); }
+.art-cta p { color: var(--text-secondary); margin-bottom: 1.4rem; line-height: 1.7; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.faq-list h2 { font-size: 1.4rem; margin-bottom: 1.2rem; color: var(--color-secondary); }
+[data-theme="dark"] .faq-list h2 { color: var(--color-accent); }
+.faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); margin-bottom: .8rem; overflow: hidden; }
+.faq-q { width: 100%; text-align: start; background: none; border: 0; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q::after { content: "+"; font-size: 1.4rem; color: var(--color-primary); flex-shrink: 0; transition: transform .3s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-item.open .faq-a { max-height: 500px; }
+.faq-a p { padding: 0 1.25rem 1.15rem; color: var(--text-secondary); line-height: 1.85; margin: 0; }
+
+.related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+.related h2 { font-size: 1.3rem; margin-bottom: 1.2rem; color: var(--color-secondary); }
+[data-theme="dark"] .related h2 { color: var(--color-accent); }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.related-grid a { display: block; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.1rem 1.25rem; text-decoration: none; color: var(--text-primary); font-weight: 600; font-size: .95rem; line-height: 1.6; transition: var(--transition); }
+.related-grid a:hover { border-color: var(--color-primary); transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .art-body p { text-align: center; }
+  .art-body ul { padding-inline-start: 0; list-style-position: inside; text-align: center; }
+}
+</style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+</script>

@@ -9,10 +9,13 @@ import FloatingCTA from '../components/FloatingCTA.astro';
   title="خدمات فني مطابخ بالدمام | صيانة، فك وتركيب، تعديل، وتفصيل مطابخ بالشرقية"
   description="خدمات فني مطابخ الدمام المتكاملة: صيانة مطابخ ألمنيوم وخشب، فك وتركيب ونقل مطابخ، قص وتعديل الدواليب، تغيير رخام طبيعي وصناعي، صيانة مفصلات هيدروليك وسحابات أدراج 0552854516."
   page="services"
+  ogImage="/img/kitchen-fitout-dammam-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={1400}
 >
   <Header slot="header" />
 
-  <section class="page-hero" style="background-image: url('/assets/تركيب مطابخ بالدمام.jpg');">
+  <section class="page-hero" style="background-image: url('/img/kitchen-fitout-dammam-1400.jpg');">
     <div class="container">
       <h1 data-ar="خدمات فني المطابخ المتكاملة بالدمام" data-en="Comprehensive Kitchen Technician Services in Dammam">خدمات فني المطابخ المتكاملة بالدمام</h1>
       <p data-ar="حلول متخصصة ومتقنة يقدمها فني مطابخ محترف: صيانة، فك وتركيب، تعديل وقص، رخام، ومفصلات في كافة أحياء الدمام والشرقية." data-en="Specialized, high-precision solutions by a certified kitchen technician: maintenance, moving, resizing, marble & hinges across Dammam and Eastern Province.">
@@ -24,14 +27,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
   <!-- INSTALLATION & MAINTENANCE PROMO BANNER -->
   <section class="section-promo-banner container">
     <div class="services-banner-wrap">
-      <img
-        src="/assets/تركيب مطابخ بالدمام.jpg"
-        alt="تركيب وصيانة مطابخ بالدمام"
-        class="services-banner-img card"
-        width="1000"
-        height="500"
-        loading="eager"
-      />
+      <picture>
+            <source type="image/webp" srcset="/img/kitchen-fitout-dammam-1400.webp 1400w, /img/kitchen-fitout-dammam-900.webp 900w, /img/kitchen-fitout-dammam-600.webp 600w, /img/kitchen-fitout-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 1000px" />
+            <img src="/img/kitchen-fitout-dammam-900.jpg" srcset="/img/kitchen-fitout-dammam-1400.jpg 1400w, /img/kitchen-fitout-dammam-900.jpg 900w, /img/kitchen-fitout-dammam-600.jpg 600w, /img/kitchen-fitout-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 1000px" alt="تركيب وصيانة مطابخ بالدمام" class="services-banner-img card" width="1000" height="1000" loading="eager" decoding="async" />
+          </picture>
     </div>
   </section>
 
@@ -43,7 +42,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 1 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/1.jpg" alt="صيانة وإصلاح مفصلات المطابخ وترقيتها للهيدروليك" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-01-1400.webp 1400w, /img/kitchen-project-01-900.webp 900w, /img/kitchen-project-01-600.webp 600w, /img/kitchen-project-01-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-01-900.jpg" srcset="/img/kitchen-project-01-1400.jpg 1400w, /img/kitchen-project-01-900.jpg 900w, /img/kitchen-project-01-600.jpg 600w, /img/kitchen-project-01-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="صيانة وإصلاح مفصلات المطابخ وترقيتها للهيدروليك" class="srv-detail-img" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">01</div>
@@ -65,6 +67,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+
+              <a href="/services/hinges-drawer-slides/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>
@@ -72,7 +76,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 2 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/تركيب مطابخ بالدمام.jpg" alt="فك وتركيب ونقل مطابخ بالدمام والشرقية" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-fitout-dammam-1400.webp 1400w, /img/kitchen-fitout-dammam-900.webp 900w, /img/kitchen-fitout-dammam-600.webp 600w, /img/kitchen-fitout-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-fitout-dammam-900.jpg" srcset="/img/kitchen-fitout-dammam-1400.jpg 1400w, /img/kitchen-fitout-dammam-900.jpg 900w, /img/kitchen-fitout-dammam-600.jpg 600w, /img/kitchen-fitout-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="فك وتركيب ونقل مطابخ بالدمام والشرقية" class="srv-detail-img" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">02</div>
@@ -94,6 +101,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+
+              <a href="/services/kitchen-moving-installation/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>
@@ -101,7 +110,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 3 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/10.jpg" alt="تعديل وقص وتفصيل دواليب المطابخ" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-10-1400.webp 1400w, /img/kitchen-project-10-900.webp 900w, /img/kitchen-project-10-600.webp 600w, /img/kitchen-project-10-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-10-900.jpg" srcset="/img/kitchen-project-10-1400.jpg 1400w, /img/kitchen-project-10-900.jpg 900w, /img/kitchen-project-10-600.jpg 600w, /img/kitchen-project-10-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تعديل وقص وتفصيل دواليب المطابخ" class="srv-detail-img" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">03</div>
@@ -123,6 +135,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+
+              <a href="/services/kitchen-resizing-carpentry/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>
@@ -130,7 +144,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 4 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/11.jpg" alt="تغيير وصيانة رخام المطابخ بالدمام" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-11-1400.webp 1400w, /img/kitchen-project-11-900.webp 900w, /img/kitchen-project-11-600.webp 600w, /img/kitchen-project-11-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-11-900.jpg" srcset="/img/kitchen-project-11-1400.jpg 1400w, /img/kitchen-project-11-900.jpg 900w, /img/kitchen-project-11-600.jpg 600w, /img/kitchen-project-11-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تغيير وصيانة رخام المطابخ بالدمام" class="srv-detail-img" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">04</div>
@@ -152,6 +169,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+
+              <a href="/services/kitchen-marble/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>
@@ -159,7 +178,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 5 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/3.jpg" alt="إصلاح واستبدال سحابات ومجاري الأدراج" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-03-1400.webp 1400w, /img/kitchen-project-03-900.webp 900w, /img/kitchen-project-03-600.webp 600w, /img/kitchen-project-03-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-03-900.jpg" srcset="/img/kitchen-project-03-1400.jpg 1400w, /img/kitchen-project-03-900.jpg 900w, /img/kitchen-project-03-600.jpg 600w, /img/kitchen-project-03-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="إصلاح واستبدال سحابات ومجاري الأدراج" class="srv-detail-img" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">05</div>
@@ -181,6 +203,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+
+              <a href="/services/hinges-drawer-slides/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>
@@ -188,7 +212,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 6 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/12.jpg" alt="تركيب وصيانة مطابخ إيكيا والجاهزة بالدمام" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-12-1400.webp 1400w, /img/kitchen-project-12-900.webp 900w, /img/kitchen-project-12-600.webp 600w, /img/kitchen-project-12-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-12-900.jpg" srcset="/img/kitchen-project-12-1400.jpg 1400w, /img/kitchen-project-12-900.jpg 900w, /img/kitchen-project-12-600.jpg 600w, /img/kitchen-project-12-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تركيب وصيانة مطابخ إيكيا والجاهزة بالدمام" class="srv-detail-img" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">06</div>
@@ -210,6 +237,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+            
+              <a href="/services/ikea-ready-kitchens/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>
@@ -217,7 +246,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 7 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/فني شركة صيانة مطابخ بالدمام0552854516.jpg" alt="صيانة مطابخ الألمنيوم والخشب والصاج والكلادينج" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-maintenance-technician-dammam-1400.webp 1400w, /img/kitchen-maintenance-technician-dammam-900.webp 900w, /img/kitchen-maintenance-technician-dammam-600.webp 600w, /img/kitchen-maintenance-technician-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-maintenance-technician-dammam-900.jpg" srcset="/img/kitchen-maintenance-technician-dammam-1400.jpg 1400w, /img/kitchen-maintenance-technician-dammam-900.jpg 900w, /img/kitchen-maintenance-technician-dammam-600.jpg 600w, /img/kitchen-maintenance-technician-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="صيانة مطابخ الألمنيوم والخشب والصاج والكلادينج" class="srv-detail-img" width="400" height="225" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">07</div>
@@ -239,6 +271,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+            
+              <a href="/services/kitchen-maintenance/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>
@@ -246,7 +280,10 @@ import FloatingCTA from '../components/FloatingCTA.astro';
         <!-- Service Item 8 -->
         <article class="service-detail-card card">
           <div class="srv-detail-img-box">
-            <img src="/assets/6.jpg" alt="تجديد واجهات المطبخ ورش الدواليب وعزل حوض الجلي" class="srv-detail-img" width="400" height="320" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-06-1400.webp 1400w, /img/kitchen-project-06-900.webp 900w, /img/kitchen-project-06-600.webp 600w, /img/kitchen-project-06-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-06-900.jpg" srcset="/img/kitchen-project-06-1400.jpg 1400w, /img/kitchen-project-06-900.jpg 900w, /img/kitchen-project-06-600.jpg 600w, /img/kitchen-project-06-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تجديد واجهات المطبخ ورش الدواليب وعزل حوض الجلي" class="srv-detail-img" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-content">
             <div class="srv-badge">08</div>
@@ -268,6 +305,8 @@ import FloatingCTA from '../components/FloatingCTA.astro';
                 <span>📞</span>
                 <span data-ar="اتصال مباشر" data-en="Direct Call">اتصال مباشر</span>
               </a>
+
+              <a href="/services/kitchen-maintenance/" class="btn btn-outline" style="border-color:var(--color-primary);color:var(--color-primary)"><span>📄</span><span data-ar="تفاصيل الخدمة" data-en="Service Details">تفاصيل الخدمة</span></a>
             </div>
           </div>
         </article>

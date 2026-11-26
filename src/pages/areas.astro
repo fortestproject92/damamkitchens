@@ -4,6 +4,21 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingCTA from '../components/FloatingCTA.astro';
 
+const districts = [
+  { slug: 'alshati', name: 'حي الشاطئ', nameEn: 'Al Shati', note: 'أبراج على الكورنيش — رطوبة البحر تُسرّع صدأ المفصلات', noteEn: 'Corniche towers — sea humidity accelerates hinge corrosion' },
+  { slug: 'alfaisaliyah', name: 'حي الفيصلية', nameEn: 'Al Faisaliyah', note: 'مطابخ عمرها 15-30 سنة — خشب متفتت ورخام مشروخ', noteEn: '15-30 year old kitchens — degraded wood and cracked marble' },
+  { slug: 'almzrouia', name: 'حي المزروعية', nameEn: 'Al Mazrouia', note: 'فلل عائلية كبيرة — استخدام 15-20 مرة يوميًا', noteEn: 'Large family villas — 15-20 uses per day' },
+  { slug: 'aljuluwia', name: 'حي الجلوية', nameEn: 'Al Juluwia', note: 'شقق مؤجرة — أعطال سكك وأدراج أكثر من الأبواب', noteEn: 'Rented apartments — rail and drawer failures dominate' },
+  { slug: 'alnoor', name: 'حي النور', nameEn: 'Al Noor', note: 'مطابخ ضيقة الزوايا — تحتاج مفصلات 165 درجة', noteEn: 'Tight L/U corners — needs 165° hinges' },
+  { slug: 'altuba', name: 'حي طيبة', nameEn: 'Al Tubah', note: 'إضافات بمواد مختلفة — فواصل وانحرافات', noteEn: 'Extensions with mismatched materials — gaps and misalignment' },
+  { slug: 'dahiyat-almalk-fahd', name: 'ضاحية الملك فهد', nameEn: 'Dahiyat Al Malik Fahd', note: 'فلل جديدة — تثبيت قبل جفاف الجدار', noteEn: 'New villas — mounted before walls fully cured' },
+  { slug: 'alarid', name: 'حي العارض', nameEn: 'Al Arid', note: 'أسطح رخام طويلة — انحناء بسبب حامل ضعيف', noteEn: 'Long countertops — sagging from weak supports' },
+  { slug: 'almuraikabat', name: 'حي المراكبات', nameEn: 'Al Muraikabat', note: 'فلل مجددة — أبواب ثقيلة على مفصلات قديمة', noteEn: 'Renovated villas — heavy doors on old hinges' },
+  { slug: 'almanar', name: 'حي المنار', nameEn: 'Al Manar', note: 'إصلاح بدل استبدال — أسرع وأوفر', noteEn: 'Repair over replace — faster and cheaper' },
+];
+
+const PILL_SLUGS = {"حي الشاطئ": "alshati", "حي الفيصلية": "alfaisaliyah", "حي المزروعية": "almzrouia", "حي الجلوية": "aljuluwia", "حي النور": "alnoor", "حي طيبة": "altuba", "ضاحية الملك فهد": "dahiyat-almalk-fahd", "حي العارض": "alarid", "حي المراكبات": "almuraikabat", "حي المنار": "almanar"} as Record<string, string>;
+
 const areas = [
   {
     cityAr: "مدينة الدمام (التغطية الكاملة لكافة الأحياء)",
@@ -92,10 +107,13 @@ const areas = [
   title="فني مطابخ بالدمام والشرقية | تغطية شاملة لكافة الأحياء والمدن 0552854516"
   description="فني مطابخ متنقل يغطي كافة أحياء الدمام والخبر والظهران والقطيف والجبيل: صيانة مطابخ، فك وتركيب ونقل، تعديل وقص، تغيير رخام ومفصلات هيدروليك. وصول سريع 20-30 دقيقة."
   page="areas"
+  ogImage="/img/kitchen-project-13-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={1400}
 >
   <Header slot="header" />
 
-  <section class="page-hero" style="background-image: url('/assets/13.jpg');">
+  <section class="page-hero" style="background-image: url('/img/kitchen-project-13-1400.jpg');">
     <div class="container">
       <h1 data-ar="مناطق تغطية فني مطابخ بالدمام والشرقية" data-en="Kitchen Technician Service Areas & Coverage">مناطق تغطية فني مطابخ بالدمام والشرقية</h1>
       <p data-ar="ورشة فني مطابخ متنقلة تصلك أينما كنت في الدمام وكافة مدن ومحافظات المنطقة الشرقية في أسرع وقت." data-en="A mobile kitchen repair workshop arriving at your doorstep anywhere in Dammam and Eastern Province in record time.">
@@ -104,8 +122,30 @@ const areas = [
     </div>
   </section>
 
-  <!-- AREAS LIST -->
+  <!-- DETAILED DAMMAM DISTRICTS -->
   <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="أحياء الدمام بالتفصيل" data-en="Dammam Districts in Detail">أحياء الدمام بالتفصيل</h2>
+        <p class="section-subtitle" data-ar="لكل حي طبيعة مباني مختلفة، وأعطال مطابخ مختلفة. اختر حيك لتعرف ما نراه فعليًا فيه." data-en="Each district has different building stock and different kitchen failure patterns. Pick yours to see what we actually encounter there.">
+          لكل حي طبيعة مباني مختلفة، وأعطال مطابخ مختلفة. اختر حيك لتعرف ما نراه فعليًا فيه.
+        </p>
+      </div>
+
+      <div class="districts-grid">
+        {districts.map((d) => (
+          <a class="card district-card" href={`/areas/${d.slug}/`}>
+            <span class="district-name" data-ar={d.name} data-en={d.nameEn}>{d.name}</span>
+            <span class="district-note" data-ar={d.note} data-en={d.noteEn}>{d.note}</span>
+            <span class="district-arrow">←</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS LIST -->
+  <section class="section section-alt">
     <div class="container">
       <div class="areas-wrapper">
         {areas.map((area) => (
@@ -131,9 +171,12 @@ const areas = [
             <div class="area-districts">
               <strong data-ar="أبرز الأحياء المشمولة بالتغطية الفورية:" data-en="Key Districts Covered Instantly:">أبرز الأحياء المشمولة بالتغطية الفورية:</strong>
               <div class="districts-tags">
-                {area.districtsAr.map((dAr, i) => (
-                  <span class="district-pill" data-ar={dAr} data-en={area.districtsEn[i]}>{dAr}</span>
-                ))}
+                {area.districtsAr.map((dAr, i) => {
+                  const slug = PILL_SLUGS[dAr];
+                  return slug
+                    ? <a class="district-pill district-pill-link" href={`/areas/${slug}/`} data-ar={dAr} data-en={area.districtsEn[i]}>{dAr}</a>
+                    : <span class="district-pill" data-ar={dAr} data-en={area.districtsEn[i]}>{dAr}</span>;
+                })}
               </div>
             </div>
           </article>
@@ -166,6 +209,69 @@ const areas = [
 </Layout>
 
 <style>
+.districts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.district-card {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding: 1.35rem 1.5rem;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.district-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.district-name {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+}
+
+[data-theme="dark"] .district-name { color: var(--color-accent); }
+
+.district-note {
+  font-size: .875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-inline-end: 1.5rem;
+}
+
+.district-arrow {
+  position: absolute;
+  inset-inline-end: 1.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.district-card:hover .district-arrow { opacity: 1; }
+
+.district-pill-link {
+  text-decoration: none;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.district-pill-link:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 .areas-wrapper {
   display: flex;
   flex-direction: column;

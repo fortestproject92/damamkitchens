@@ -1,23 +1,32 @@
 {
-  "name": "صيانه مطابخ وإصلاح مفصلات في الدمام",
+  "name": "صيانة وتفصيل وتركيب مطابخ بالدمام",
   "short_name": "صيانة مطابخ الدمام",
-  "description": "خدمات صيانة مطابخ وإصلاح مفصلات احترافية في الدمام والمنطقة الشرقية",
+  "description": "خدمات صيانة المطابخ وتفصيلها وتركيبها وإصلاح المفصلات في الدمام والمنطقة الشرقية",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#251714",
+  "background_color": "#ffffff",
   "theme_color": "#B67B59",
   "lang": "ar",
   "dir": "rtl",
   "icons": [
     {
-      "src": "/assets/logo/1.png",
+      "src": "/img/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/assets/logo/1.png",
+      "src": "/img/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

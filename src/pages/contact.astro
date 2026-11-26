@@ -10,10 +10,13 @@ import IdentityCard from '../components/IdentityCard.astro';
   title="تواصل معنا | رقم فني مطابخ بالدمام 0552854516"
   description="تواصل مع أفضل فني مطابخ بالدمام والمنطقة الشرقية: صيانة مطابخ، فك وتركيب، تعديل وقص، تغيير رخام ومفصلات. اتصال مباشر وواتساب 0552854516 متاحون حتى 2 ليلاً."
   page="contact"
+  ogImage="/img/kitchen-project-17-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={1400}
 >
   <Header slot="header" />
 
-  <section class="page-hero" style="background-image: url('/assets/17.jpg');">
+  <section class="page-hero" style="background-image: url('/img/kitchen-project-17-1400.jpg');">
     <div class="container">
       <h1 data-ar="تواصل معنا - رقم فني مطابخ بالدمام" data-en="Contact Us - Dammam Kitchen Technician">تواصل معنا - رقم فني مطابخ بالدمام</h1>
       <p data-ar="فريقنا المتخصص في صيانة، فك، تركيب، وتعديل مطابخ الدمام جاهز لاستقبال اتصالاتكم ورسائلكم طوال اليوم من 7:00 ص حتى 2:00 بعد منتصف الليل." data-en="Our specialized Dammam kitchen repair & installation team is ready to receive your calls and messages daily from 7:00 AM to 2:00 AM.">
@@ -113,14 +116,10 @@ import IdentityCard from '../components/IdentityCard.astro';
 
           <!-- Contact Promotional Banner -->
           <div class="contact-banner-card card">
-            <img
-              src="/assets/0552854516.jpg"
-              alt="رقم صيانة مطابخ الدمام 0552854516"
-              class="contact-promo-img"
-              width="600"
-              height="350"
-              loading="lazy"
-            />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-installation-dammam-1400.webp 1400w, /img/kitchen-installation-dammam-900.webp 900w, /img/kitchen-installation-dammam-600.webp 600w, /img/kitchen-installation-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 600px" />
+            <img src="/img/kitchen-installation-dammam-900.jpg" srcset="/img/kitchen-installation-dammam-1400.jpg 1400w, /img/kitchen-installation-dammam-900.jpg 900w, /img/kitchen-installation-dammam-600.jpg 600w, /img/kitchen-installation-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 600px" alt="رقم صيانة مطابخ الدمام 0552854516" class="contact-promo-img" width="600" height="600" loading="lazy" decoding="async" />
+          </picture>
           </div>
 
           <!-- Quick Info Card -->

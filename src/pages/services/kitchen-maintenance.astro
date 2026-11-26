@@ -1,0 +1,347 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import IdentityCard from '../../components/IdentityCard.astro';
+
+const siteUrl = 'https://www.damamkitchens.com';
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "فني صيانة مطابخ بالدمام",
+  "serviceType": "فني صيانة مطابخ بالدمام",
+  "description": "صيانة مطابخ الألمنيوم والخشب والصاج بالدمام: إصلاح الدواليب والأبواب والأرفف وارتفاع الأبواب واستبدال القواعد المتآكلة مع فحص شامل للمطبخ قبل بدء العمل.",
+  "areaServed": [
+    { "@type": "City", "name": "الدمام" },
+    { "@type": "City", "name": "الخبر" },
+    { "@type": "City", "name": "الظهران" },
+    { "@type": "City", "name": "القطيف" },
+    { "@type": "City", "name": "الجبيل" }
+  ],
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "فني مطابخ وصيانة مطابخ بالدمام",
+    "telephone": "+966552854516",
+    "url": siteUrl,
+    "image": siteUrl + "/img/logo-mark-360.jpg"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "areaServed": "الدمام، المنطقة الشرقية"
+  },
+  "url": siteUrl + "/services/kitchen-maintenance/"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "خدماتنا", "item": siteUrl + "/services/" },
+    { "@type": "ListItem", "position": 3, "name": "فني صيانة مطابخ بالدمام", "item": siteUrl + "/services/kitchen-maintenance/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "كم يستغرق إصلاح مطبخ كامل؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "الأعمال النمطية — باب مرتخٍ، درج متعثر، مفصلة مكسورة — تنتهي في زيارة واحدة لا تتجاوز الساعة إلى ساعتين. إذا كان المطبخ يحتاج استبدال معظم المفصلات أو معالجة رطوبة ممتدة، قد نمتد إلى زيارتين. نحدد ذلك في المعاينة الهاتفية قبل الحضور."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تعملون على المطابخ المستوردة والجاهزة؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، نعمل على الألمنيوم والخشب والصاج و MDF والكلادينج، وكذلك مطابخ إيكيا والمطابخ الصينية والتركية الجاهزة. لكل مادة طريقة تثبيت مختلفة، ولهذا نسأل عن نوع المطبخ قبل الحضور لنحمل المسامير والحشوات المناسبة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تحتاجون لفك المطبخ بالكامل؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. الغالبية العظمى من أعمال الصيانة تُنفّذ في مكانها دون فك. الفك الكامل لا يحدث إلا في حالات نقل المطبخ أو استبدال هيكل متضرر جذريًا، ونوضح ذلك مسبقًا إن كان ضروريًا."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يوجد ضمان على الإصلاح؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، الإصلاح المنجز وقطع الغيار المستبدلة مشمولة بضمان. مدة الضمان تُذكر شفهيًا عند الاتفاق وتختلف بحسب نوع القطعة، والضمان يشمل عيب الصناعة أو التنفيذ لا سوء الاستخدام."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما هي مناطق التغطية؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نغطي الدمام بكامل أحيائها، إضافة إلى الخبر والظهران والقطيف وسيهات والجبيل. الحضور متاح يوميًا من 7 صباحًا حتى 2 بعد منتصف الليل."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="صيانة مطابخ بالدمام | إصلاح دواليب وأبواب المطبخ 0552854516"
+  description="صيانة مطابخ الألمنيوم والخشب والصاج بالدمام: إصلاح الدواليب والأبواب والأرفف وارتفاع الأبواب واستبدال القواعد المتآكلة مع فحص شامل للمطبخ قبل بدء العمل."
+  page="services"
+  ogImage="/img/kitchen-maintenance-technician-dammam-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={788}
+>
+  <Header slot="header" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="page-hero" style="background-image: url('/img/kitchen-maintenance-technician-dammam-1400.jpg');">
+    <div class="container">
+      <nav class="crumbs" aria-label="مسار التنقل">
+        <a href="/">الرئيسية</a> / <a href="/services/">خدماتنا</a> / <span>فني صيانة مطابخ بالدمام</span>
+      </nav>
+      <h1>فني صيانة مطابخ بالدمام — إصلاح شامل داخل منزلك</h1>
+      <p>نصل إلى مطبخك بكامل العدة وقطع الغيار، ونشخّص العطل أمامك قبل أن نبدأ. لا نقل للمطبخ، ولا تكاليف مفاجئة بعد الاتفاق.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+            <p>تتلف المطابخ ببطء ثم تتعطل فجأة. المفصلة التي بدأت تصفر تصل إلى مرحلة الانكسار، والسكة التي كانت تحتاج شدًّا بسيطًا تنتهي بسقوط الدرج. المشكلة الحقيقية أن أغلب الأسر تنتظر حتى تتفاقم الأعراض، فتضطر إلى تفصيل مطبخ جديد بينما كان الإصلاح ممكنًا بجزء بسيط من التكلفة.</p>
+      <p>فني صيانة المطابخ في الدمام يعمل على تشخيص السبب الجذري لا على ترقيع العرض. إذا كان الباب مرتخيًا، فالسؤال ليس "كيف نعيد شده" بل "لماذا ارتخى": هل تلفت المفصلة، أم تفتّت الخشب حولها، أم أن القاعدة الحاملة انحنت؟ كل سبب يحتاج علاجًا مختلفًا، وترقيع السبب الخطأ يعني عودة المشكلة بعد أسابيع.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">علامات تحتاج فيها هذه الخدمة</h2>
+        <p class="section-subtitle">أعراض شائعة نراها في مطابخ الدمام — كل عرض له سبب مختلف وعلاج مختلف.</p>
+      </div>
+      <div class="grid-3">
+                <div class="card sym-card">
+          <span class="sym-icon">🚪</span>
+          <h3>باب خزانة مرتخٍ أو مائل</h3>
+          <p>من أعراضه أن الباب يلامس الباب المجاور عند الإغلاق، أو لا يُغلق بإحكام. السبب في معظم الحالات مفصلة تالفة أو خشب متفتت حولها.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">📏</span>
+          <h3>درج لا يسحب بسلاسة</h3>
+          <p>صوت احتكاك أو مقاومة أثناء السحب يعني تلف رولمان السكة أو انحناء مجراها. السحب الخشن يزيد التلف إذا استمر.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">🔩</span>
+          <h3>مفصلة تصدر صريرًا</h3>
+          <p>الصرير بداية تآكل داخل تجويف المفصلة. مرحلة تليين بسيطة، أو استبدال كامل إذا كان المحور المهترئ.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">📐</span>
+          <h3>أرفف هابطة أو مائلة</h3>
+          <p>انحناء حامل الرف أو تفتت مواقع التثبيت. الرف الهابط قد يسقط بأوانٍ ثقيلة.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">💧</span>
+          <h3>انتفاخ في حافة الدرف تحت الحوض</h3>
+          <p>تسرب رطوبة مزمن من مجالي الحوض يُفسد قلب MDF. يحتاج قصّ الجزء المتضرر وعزله قبل أن ينتشر.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">🔓</span>
+          <h3>أبواب لا تتطابق عند الإغلاق</h3>
+          <p>اختلاف في زوايا التثبيت. علاجه ضبط المفصلات الثلاث بالمليمتر لا تغييرها.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">كيف نعمل — أربع مراحل واضحة</h2>
+        <p class="section-subtitle">لا أعمال إضافية دون موافقتك، ولا تسعير غير مكتوب.</p>
+      </div>
+      <div class="grid-4">
+                <div class="card step-card">
+          <span class="step-num">1</span>
+          <h3>المعاينة الهاتفية</h3>
+          <p>نسأل عن نوع المطبخ وعمره ووصف العطل، لنحدد إن كان سيُحل في زيارة واحدة أو يحتاج قطع غيار تُطلب مسبقًا.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-num">2</span>
+          <h3>الفحص الميداني</h3>
+          <p>فحص بصري ويدوي لكل الوحدات، مع اختبار تحمّل الأدراج والأبواب، وتسجيل ما يحتاج تدخلًا فوريًا وما يمكن تأجيله بأمان.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-num">3</span>
+          <h3>الاتفاق قبل العمل</h3>
+          <p>نعرض البنود والتكلفة بوضوح قبل فك أي برغي. لا أعمال إضافية دون موافقتك.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-num">4</span>
+          <h3>التنفيذ والتنظيف</h3>
+          <p>إصلاح أو استبدال، ثم تنظيف مكان العمل وترك المطبخ صالحًا للاستخدام مباشرة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid-2 split">
+        <div>
+          <h2 class="section-title">ماذا يشمل العمل</h2>
+          <ul class="checklist">
+                        <li>استبدال المفصلات الهيدروليكية بأخرى إيطالية أو ألمانية سوفت كلوز</li>
+            <li>ضبط زوايا الأبواب الثلاثية ومواءمة الفواصل بين الدرف</li>
+            <li>إصلاح أو استبدال سكك الأدراج ورولمان السحب</li>
+            <li>تقوية مواقع التثبيت المتفتتة بحشوات ومسامير مناسبة للمادة</li>
+            <li>معالجة انتفاخ حواف MDF الناتج عن رطوبة الحوض</li>
+            <li>شد وإعادة تثبيت الأرفف والحوامل المائلة</li>
+            <li>فحص مجالي الحوض وكشف تسريب خفي قبل أن يفسد الخشب</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <picture>
+            <source type="image/webp" srcset="/img/kitchen-maintenance-technician-dammam-1400.webp 1400w, /img/kitchen-maintenance-technician-dammam-900.webp 900w, /img/kitchen-maintenance-technician-dammam-600.webp 600w, /img/kitchen-maintenance-technician-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, 46vw" />
+            <img src="/img/kitchen-maintenance-technician-dammam-900.jpg" srcset="/img/kitchen-maintenance-technician-dammam-1400.jpg 1400w, /img/kitchen-maintenance-technician-dammam-900.jpg 900w, /img/kitchen-maintenance-technician-dammam-600.jpg 600w, /img/kitchen-maintenance-technician-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, 46vw" alt="فني صيانة مطابخ بالدمام بالدمام" width="600" height="338" loading="lazy" decoding="async" class="split-img card" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">أسئلة يتكرر طرحها</h2>
+        <p class="section-subtitle">أجوبة مباشرة على ما يسأل عنه العملاء قبل الحجز.</p>
+      </div>
+      <div class="faq-list">
+                <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">كم يستغرق إصلاح مطبخ كامل؟</button>
+          <div class="faq-a"><p>الأعمال النمطية — باب مرتخٍ، درج متعثر، مفصلة مكسورة — تنتهي في زيارة واحدة لا تتجاوز الساعة إلى ساعتين. إذا كان المطبخ يحتاج استبدال معظم المفصلات أو معالجة رطوبة ممتدة، قد نمتد إلى زيارتين. نحدد ذلك في المعاينة الهاتفية قبل الحضور.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل تعملون على المطابخ المستوردة والجاهزة؟</button>
+          <div class="faq-a"><p>نعم، نعمل على الألمنيوم والخشب والصاج و MDF والكلادينج، وكذلك مطابخ إيكيا والمطابخ الصينية والتركية الجاهزة. لكل مادة طريقة تثبيت مختلفة، ولهذا نسأل عن نوع المطبخ قبل الحضور لنحمل المسامير والحشوات المناسبة.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل تحتاجون لفك المطبخ بالكامل؟</button>
+          <div class="faq-a"><p>لا. الغالبية العظمى من أعمال الصيانة تُنفّذ في مكانها دون فك. الفك الكامل لا يحدث إلا في حالات نقل المطبخ أو استبدال هيكل متضرر جذريًا، ونوضح ذلك مسبقًا إن كان ضروريًا.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل يوجد ضمان على الإصلاح؟</button>
+          <div class="faq-a"><p>نعم، الإصلاح المنجز وقطع الغيار المستبدلة مشمولة بضمان. مدة الضمان تُذكر شفهيًا عند الاتفاق وتختلف بحسب نوع القطعة، والضمان يشمل عيب الصناعة أو التنفيذ لا سوء الاستخدام.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">ما هي مناطق التغطية؟</button>
+          <div class="faq-a"><p>نغطي الدمام بكامل أحيائها، إضافة إلى الخبر والظهران والقطيف وسيهات والجبيل. الحضور متاح يوميًا من 7 صباحًا حتى 2 بعد منتصف الليل.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">خدمات أخرى قد تحتاجها</h2>
+      </div>
+      <div class="other-services">
+                <a href="/services/kitchen-moving-installation/">فك وتركيب ونقل مطابخ</a>
+        <a href="/services/kitchen-resizing-carpentry/">تعديل وقص وتفصيل</a>
+        <a href="/services/hinges-drawer-slides/">مفصلات وسحابات الأدراج</a>
+        <a href="/services/kitchen-marble/">رخام المطابخ</a>
+        <a href="/services/ikea-ready-kitchens/">مطابخ إيكيا والجاهزة</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>تحتاج فني صيانة مطابخ بالدمام في الدمام؟</h2>
+        <p>اتصل أو أرسل صورة للمشكلة على واتساب، وسنعطيك تقديرًا واضحًا قبل الحضور.</p>
+        <div class="cta-btns">
+          <a href="tel:+966552854516" class="btn btn-primary btn-lg">📞 0552854516</a>
+          <a href="https://wa.me/966552854516?text=مرحباً، أحتاج فني صيانة مطابخ بالدمام بالدمام" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">💬 واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <IdentityCard />
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.crumbs { font-size: .875rem; color: rgba(255,255,255,.75); margin-bottom: 1rem; }
+.crumbs a { color: rgba(255,255,255,.9); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs span { color: #fff; font-weight: 700; }
+
+.prose { max-width: 820px; margin: 0 auto; }
+.prose p { color: var(--text-secondary); line-height: 1.95; font-size: 1.06rem; margin-bottom: 1.4rem; text-align: start; }
+
+.sym-card { text-align: start; }
+.sym-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.sym-card h3 { color: var(--color-secondary); font-size: 1.1rem; margin-bottom: .6rem; }
+[data-theme="dark"] .sym-card h3 { color: var(--color-accent); }
+.sym-card p { color: var(--text-secondary); line-height: 1.75; font-size: .95rem; }
+
+.step-card { position: relative; padding-top: 2.5rem; }
+.step-num { position: absolute; top: 1rem; inset-inline-start: 1.2rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .9rem; }
+.step-card h3 { font-size: 1.02rem; margin-bottom: .55rem; color: var(--color-secondary); }
+[data-theme="dark"] .step-card h3 { color: var(--color-accent); }
+.step-card p { color: var(--text-secondary); line-height: 1.7; font-size: .93rem; }
+
+.split { align-items: center; gap: 2.5rem; }
+.split-img { width: 100%; height: auto; display: block; object-fit: cover; padding: 0; }
+.checklist { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.checklist li { position: relative; padding-inline-start: 1.9rem; margin-bottom: .85rem; color: var(--text-secondary); line-height: 1.7; }
+.checklist li::before { content: "✓"; position: absolute; inset-inline-start: 0; top: 0; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; font-size: .72rem; font-weight: 900; }
+
+.faq-list { max-width: 860px; margin: 0 auto; }
+.faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); margin-bottom: .9rem; overflow: hidden; }
+.faq-q { width: 100%; text-align: start; background: none; border: 0; padding: 1.15rem 1.3rem; font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q::after { content: "+"; font-size: 1.4rem; color: var(--color-primary); flex-shrink: 0; transition: transform .3s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-item.open .faq-a { max-height: 500px; }
+.faq-a p { padding: 0 1.3rem 1.2rem; color: var(--text-secondary); line-height: 1.85; margin: 0; }
+
+.other-services { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+.other-services a { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); padding: .7rem 1.3rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: .92rem; transition: var(--transition); }
+.other-services a:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); transform: translateY(-2px); }
+
+.cta-box { background: var(--bg-section-alt); border-radius: var(--border-radius-xl); padding: 3rem 2rem; text-align: center; border: 1px solid var(--border-color); }
+.cta-box h2 { font-size: 1.7rem; margin-bottom: .8rem; color: var(--color-secondary); }
+[data-theme="dark"] .cta-box h2 { color: var(--color-accent); }
+.cta-box p { color: var(--text-secondary); margin-bottom: 1.6rem; line-height: 1.7; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .prose p { text-align: center; }
+}
+</style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+</script>

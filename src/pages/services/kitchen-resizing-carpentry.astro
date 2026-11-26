@@ -1,0 +1,347 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import IdentityCard from '../../components/IdentityCard.astro';
+
+const siteUrl = 'https://www.damamkitchens.com';
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "تعديل وقص وتفصيل دواليب المطابخ",
+  "serviceType": "تعديل وقص وتفصيل دواليب المطابخ",
+  "description": "قص وتعديل دواليب المطابخ بالدمام: تعديل زوايا، قص أبواب، تفصيل كبائن إضافية، ومواءمة المطبخ مع مساحة تغيّرت.",
+  "areaServed": [
+    { "@type": "City", "name": "الدمام" },
+    { "@type": "City", "name": "الخبر" },
+    { "@type": "City", "name": "الظهران" },
+    { "@type": "City", "name": "القطيف" },
+    { "@type": "City", "name": "الجبيل" }
+  ],
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "فني مطابخ وصيانة مطابخ بالدمام",
+    "telephone": "+966552854516",
+    "url": siteUrl,
+    "image": siteUrl + "/img/logo-mark-360.jpg"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "areaServed": "الدمام، المنطقة الشرقية"
+  },
+  "url": siteUrl + "/services/kitchen-resizing-carpentry/"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "خدماتنا", "item": siteUrl + "/services/" },
+    { "@type": "ListItem", "position": 3, "name": "تعديل وقص وتفصيل دواليب المطابخ", "item": siteUrl + "/services/kitchen-resizing-carpentry/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "هل يمكن تفصيل قطعة بنفس لون المطبخ القديم؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "في الغالب نعم، لكن التطابق الكامل يعتمد على توفّر المادة. الألمنيوم المغلف و PVC متوفران بألوان قياسية، وقد يكون التطابق دقيقًا. الخشب الطبيعي يتغير لونه بالعمر، لذلك قد نوصي بدرجة قريبة مع فرق مقبول بصريًا. نناقش هذا قبل التفصيل لا بعده."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل القص يتم داخل المنزل؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "الأجزاء الكبيرة تُقصّ في الورشة للحصول على حافة مستقيمة. التعديلات الهامشية والقص الصغير يتم في الموقع. الغبار يُحتوى بشفّاط صناعي، ونغادر المكان أنظف مما دخلناه."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كم تكلفة تفصيل خزانة إضافية؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "التكلفة تعتمد على المقاس والمادة والإكسسوارات (مفصلات، سكك، مقابض). نعطي السعر مكتوبًا بعد القياس. لا تسعير هاتفي دقيق لأن كل فراغ يختلف عن الآخر."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكن تعديل مطبخ إيكيا؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، لكن مطابخ إيكيا تعتمد على نظام تثبيت خاص ومقاسات معيارية. التعديل ممكن لكنه يحتاج قطع غيار من نفس النظام أو بدائل متوافقة. نوضح ذلك قبل البدء."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تأخذون المقاسات مجانًا؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "القياس والمعاينة مجانيان داخل الدمام. أما خارج الدمام فيُحدد رمز رمزي يُخصم من قيمة التنفيذ إذا تم الاتفاق."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="تعديل وقص وتفصيل دواليب المطابخ بالدمام | تفصيل على المقاس 0552854516"
+  description="قص وتعديل دواليب المطابخ بالدمام: تعديل زوايا، قص أبواب، تفصيل كبائن إضافية، ومواءمة المطبخ مع مساحة تغيّرت."
+  page="services"
+  ogImage="/img/kitchen-project-10-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={788}
+>
+  <Header slot="header" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="page-hero" style="background-image: url('/img/kitchen-project-10-1400.jpg');">
+    <div class="container">
+      <nav class="crumbs" aria-label="مسار التنقل">
+        <a href="/">الرئيسية</a> / <a href="/services/">خدماتنا</a> / <span>تعديل وقص وتفصيل دواليب المطابخ</span>
+      </nav>
+      <h1>تعديل وقص وتفصيل دواليب المطابخ بالدمام</h1>
+      <p>المطبخ الذي ظل مناسبًا لسنوات لا يبقى مناسبًا دائمًا. تغيير تطبيق، إضافة فرن، أو توسيع مساحة عمل — كلها تحتاج قصًّا وتفصيلًا مدروسًا لا مجرد منشار.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+            <p>أغلب المطابخ لا تحتاج استبدالًا كاملًا، بل تعديلًا موضعيًا. وحدة واحدة زائدة تحبس حركة الباب، أو رف طويل يعوق فتح الفرن، أو مساحة ميتة بين الشبكة والحائط تكفي لخزانة صغيرة. هذه المشكلات تُحل بالتفصيل على المقاس، وبنسبة من تكلفة مطبخ جديد تتراوح بين 10 و25 بالمئة.</p>
+      <p>التفصيل الجيد يبدأ بالقياس وليس بالخشب. نقيس الشبكة الحالية، سُمْك الجدران، مواقع مواسير المياه والغاز والكهرباء، ثم نصمم القطعة الجديدة لتتناسب مع ما هو موجود دون المساس بأي مسار خدمي. القص بعد القياس، لا قبله.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">علامات تحتاج فيها هذه الخدمة</h2>
+        <p class="section-subtitle">أعراض شائعة نراها في مطابخ الدمام — كل عرض له سبب مختلف وعلاج مختلف.</p>
+      </div>
+      <div class="grid-3">
+                <div class="card sym-card">
+          <span class="sym-icon">📐</span>
+          <h3>مساحة ميتة لا تُستخدم</h3>
+          <p>فراغ بين نهاية الشبكة والحائط أو بين الوحدة والعمود. يتحول إلى خزانة ضيقة أو رف مفتوح.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">🚪</span>
+          <h3>باب يصطدم بباب آخر</h3>
+          <p>قص الجزء المتصادم أو تعديل المفصلة بزاوية أكبر. الحل دقيق بالمليمتر لا بالعين.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">🍳</span>
+          <h3>فرن أكبر لا يدخل مكانه</h3>
+          <p>تعديل التجويف أو نقل الفاصل بين الوحدات لتوسيع المساحة دون الإخلال بالاستقامة.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">🧱</span>
+          <h3>اختلاف مستوى الجدار</h3>
+          <p>الجدران ليست مستقيمة دائمًا. تعبئة الفارق بلوح مُقاس يمنع ميل الشبكة وتراكم الأتربة خلفها.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">🪵</span>
+          <h3>لوح متأثر بالرطوبة</h3>
+          <p>قص الجزء المتضرر واستبداله بنفس المادة واللون، مع عزل الحافة المكشوفة ضد الماء.</p>
+        </div>
+        <div class="card sym-card">
+          <span class="sym-icon">📏</span>
+          <h3>رف طويل يعوق العمل</h3>
+          <p>قصّ الرف لارتفاع يسمح بفتح غطاء الجهاز أو استخدام المساحة تحته.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">كيف نعمل — أربع مراحل واضحة</h2>
+        <p class="section-subtitle">لا أعمال إضافية دون موافقتك، ولا تسعير غير مكتوب.</p>
+      </div>
+      <div class="grid-4">
+                <div class="card step-card">
+          <span class="step-num">1</span>
+          <h3>القياس الميداني</h3>
+          <p>قياس الشبكة والفراغات والحوائط والمواسير. تصوير المسار الخدمي لتجنب أي قص بالقرب منه.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-num">2</span>
+          <h3>التصميم والتسعير</h3>
+          <p>مقاس القطعة، المادة، واللون المطابق. تسعير مكتوب قبل التقطيع.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-num">3</span>
+          <h3>التفصيل والقص</h3>
+          <p>قص ومدّ الحواف في الورشة، ثم النقل والتركيب. القطع الهامشية تُقصّ في الموقع.</p>
+        </div>
+        <div class="card step-card">
+          <span class="step-num">4</span>
+          <h3>المواءمة النهائية</h3>
+          <p>تركيب القطعة وضبطها مع الشبكة القائمة، وفحص أنه لم يُمسّ أي مسار خدمي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid-2 split">
+        <div>
+          <h2 class="section-title">ماذا يشمل العمل</h2>
+          <ul class="checklist">
+                        <li>قياس ميداني للشبكة والحوائط والمواسير قبل التصميم</li>
+            <li>تفصيل كبائن وخزائن إضافية لاستغلال الفراغات الميتة</li>
+            <li>قص الأبواب والأرفف لمواءمة الأجهزة والمساحات</li>
+            <li>تعديل الفواصل بين الوحدات لتوسيع تجويف جهاز</li>
+            <li>تعبئة فرق مستوى الجدار بألواح مقاسة</li>
+            <li>عزل الحواف المكشوفة ضد الرطوبة</li>
+            <li>مطابقة اللون والملمس مع المطبخ القائم</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-10-1400.webp 1400w, /img/kitchen-project-10-900.webp 900w, /img/kitchen-project-10-600.webp 600w, /img/kitchen-project-10-400.webp 400w" sizes="(max-width: 640px) 92vw, 46vw" />
+            <img src="/img/kitchen-project-10-900.jpg" srcset="/img/kitchen-project-10-1400.jpg 1400w, /img/kitchen-project-10-900.jpg 900w, /img/kitchen-project-10-600.jpg 600w, /img/kitchen-project-10-400.jpg 400w" sizes="(max-width: 640px) 92vw, 46vw" alt="تعديل وقص وتفصيل دواليب المطابخ بالدمام" width="600" height="600" loading="lazy" decoding="async" class="split-img card" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">أسئلة يتكرر طرحها</h2>
+        <p class="section-subtitle">أجوبة مباشرة على ما يسأل عنه العملاء قبل الحجز.</p>
+      </div>
+      <div class="faq-list">
+                <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل يمكن تفصيل قطعة بنفس لون المطبخ القديم؟</button>
+          <div class="faq-a"><p>في الغالب نعم، لكن التطابق الكامل يعتمد على توفّر المادة. الألمنيوم المغلف و PVC متوفران بألوان قياسية، وقد يكون التطابق دقيقًا. الخشب الطبيعي يتغير لونه بالعمر، لذلك قد نوصي بدرجة قريبة مع فرق مقبول بصريًا. نناقش هذا قبل التفصيل لا بعده.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل القص يتم داخل المنزل؟</button>
+          <div class="faq-a"><p>الأجزاء الكبيرة تُقصّ في الورشة للحصول على حافة مستقيمة. التعديلات الهامشية والقص الصغير يتم في الموقع. الغبار يُحتوى بشفّاط صناعي، ونغادر المكان أنظف مما دخلناه.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">كم تكلفة تفصيل خزانة إضافية؟</button>
+          <div class="faq-a"><p>التكلفة تعتمد على المقاس والمادة والإكسسوارات (مفصلات، سكك، مقابض). نعطي السعر مكتوبًا بعد القياس. لا تسعير هاتفي دقيق لأن كل فراغ يختلف عن الآخر.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل يمكن تعديل مطبخ إيكيا؟</button>
+          <div class="faq-a"><p>نعم، لكن مطابخ إيكيا تعتمد على نظام تثبيت خاص ومقاسات معيارية. التعديل ممكن لكنه يحتاج قطع غيار من نفس النظام أو بدائل متوافقة. نوضح ذلك قبل البدء.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">هل تأخذون المقاسات مجانًا؟</button>
+          <div class="faq-a"><p>القياس والمعاينة مجانيان داخل الدمام. أما خارج الدمام فيُحدد رمز رمزي يُخصم من قيمة التنفيذ إذا تم الاتفاق.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">خدمات أخرى قد تحتاجها</h2>
+      </div>
+      <div class="other-services">
+                <a href="/services/kitchen-maintenance/">صيانة مطابخ</a>
+        <a href="/services/kitchen-moving-installation/">فك وتركيب ونقل مطابخ</a>
+        <a href="/services/hinges-drawer-slides/">مفصلات وسحابات الأدراج</a>
+        <a href="/services/kitchen-marble/">رخام المطابخ</a>
+        <a href="/services/ikea-ready-kitchens/">مطابخ إيكيا والجاهزة</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>تحتاج تعديل وقص وتفصيل دواليب المطابخ في الدمام؟</h2>
+        <p>اتصل أو أرسل صورة للمشكلة على واتساب، وسنعطيك تقديرًا واضحًا قبل الحضور.</p>
+        <div class="cta-btns">
+          <a href="tel:+966552854516" class="btn btn-primary btn-lg">📞 0552854516</a>
+          <a href="https://wa.me/966552854516?text=مرحباً، أحتاج تعديل وقص وتفصيل دواليب المطابخ بالدمام" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">💬 واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <IdentityCard />
+  <FloatingCTA />
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+.crumbs { font-size: .875rem; color: rgba(255,255,255,.75); margin-bottom: 1rem; }
+.crumbs a { color: rgba(255,255,255,.9); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs span { color: #fff; font-weight: 700; }
+
+.prose { max-width: 820px; margin: 0 auto; }
+.prose p { color: var(--text-secondary); line-height: 1.95; font-size: 1.06rem; margin-bottom: 1.4rem; text-align: start; }
+
+.sym-card { text-align: start; }
+.sym-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.sym-card h3 { color: var(--color-secondary); font-size: 1.1rem; margin-bottom: .6rem; }
+[data-theme="dark"] .sym-card h3 { color: var(--color-accent); }
+.sym-card p { color: var(--text-secondary); line-height: 1.75; font-size: .95rem; }
+
+.step-card { position: relative; padding-top: 2.5rem; }
+.step-num { position: absolute; top: 1rem; inset-inline-start: 1.2rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: .9rem; }
+.step-card h3 { font-size: 1.02rem; margin-bottom: .55rem; color: var(--color-secondary); }
+[data-theme="dark"] .step-card h3 { color: var(--color-accent); }
+.step-card p { color: var(--text-secondary); line-height: 1.7; font-size: .93rem; }
+
+.split { align-items: center; gap: 2.5rem; }
+.split-img { width: 100%; height: auto; display: block; object-fit: cover; padding: 0; }
+.checklist { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.checklist li { position: relative; padding-inline-start: 1.9rem; margin-bottom: .85rem; color: var(--text-secondary); line-height: 1.7; }
+.checklist li::before { content: "✓"; position: absolute; inset-inline-start: 0; top: 0; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; font-size: .72rem; font-weight: 900; }
+
+.faq-list { max-width: 860px; margin: 0 auto; }
+.faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--border-radius); margin-bottom: .9rem; overflow: hidden; }
+.faq-q { width: 100%; text-align: start; background: none; border: 0; padding: 1.15rem 1.3rem; font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.faq-q::after { content: "+"; font-size: 1.4rem; color: var(--color-primary); flex-shrink: 0; transition: transform .3s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-item.open .faq-a { max-height: 500px; }
+.faq-a p { padding: 0 1.3rem 1.2rem; color: var(--text-secondary); line-height: 1.85; margin: 0; }
+
+.other-services { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+.other-services a { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); padding: .7rem 1.3rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: .92rem; transition: var(--transition); }
+.other-services a:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); transform: translateY(-2px); }
+
+.cta-box { background: var(--bg-section-alt); border-radius: var(--border-radius-xl); padding: 3rem 2rem; text-align: center; border: 1px solid var(--border-color); }
+.cta-box h2 { font-size: 1.7rem; margin-bottom: .8rem; color: var(--color-secondary); }
+[data-theme="dark"] .cta-box h2 { color: var(--color-accent); }
+.cta-box p { color: var(--text-secondary); margin-bottom: 1.6rem; line-height: 1.7; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .prose p { text-align: center; }
+}
+</style>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+</script>

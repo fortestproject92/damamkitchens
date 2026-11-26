@@ -10,6 +10,10 @@ import IdentityCard from '../components/IdentityCard.astro';
   title="فني مطابخ بالدمام | صيانة وتركيب وتفصيل مطابخ وإصلاح مفصلات 0552854516"
   description="أفضل فني مطابخ بالدمام والشرقية: صيانة مطابخ، فك وتركيب ونقل مطابخ، تعديل وقص دواليب، تغيير رخام طبيعي وصناعي، إصلاح وتبديل مفصلات هيدروليك وسحابات الأدراج. متاحون يومياً 7ص-2ص."
   page="home"
+  ogImage="/img/modern-kitchen-design-dammam-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={788}
+  preloadImage="/img/modern-kitchen-design-dammam-900.webp"
 >
   <Header slot="header" />
 
@@ -119,15 +123,10 @@ import IdentityCard from '../components/IdentityCard.astro';
       <!-- THE REQUESTED FLOATING BIG WIDE HERO BANNER (UNCROPPED) -->
       <div class="floating-hero-showcase">
         <div class="floating-hero-frame">
-          <img
-            src="/assets/هل تبحث عن مطابخ مميزة وعصرية؟0552854516.jpg"
-            alt="هل تبحث عن مطابخ مميزة وعصرية؟ صيانة مطابخ الدمام 0552854516"
-            class="floating-hero-img"
-            width="1200"
-            height="675"
-            fetchpriority="high"
-            loading="eager"
-          />
+          <picture>
+            <source type="image/webp" srcset="/img/modern-kitchen-design-dammam-1400.webp 1400w, /img/modern-kitchen-design-dammam-900.webp 900w, /img/modern-kitchen-design-dammam-600.webp 600w, /img/modern-kitchen-design-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 1200px" />
+            <img src="/img/modern-kitchen-design-dammam-900.jpg" srcset="/img/modern-kitchen-design-dammam-1400.jpg 1400w, /img/modern-kitchen-design-dammam-900.jpg 900w, /img/modern-kitchen-design-dammam-600.jpg 600w, /img/modern-kitchen-design-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 1200px" alt="هل تبحث عن مطابخ مميزة وعصرية؟ صيانة مطابخ الدمام 0552854516" class="floating-hero-img" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />
+          </picture>
         </div>
       </div>
 
@@ -196,7 +195,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 1 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/فني شركة صيانة مطابخ بالدمام0552854516.jpg" alt="فني صيانة مطابخ بالدمام ألمنيوم وخشب" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-maintenance-technician-dammam-1400.webp 1400w, /img/kitchen-maintenance-technician-dammam-900.webp 900w, /img/kitchen-maintenance-technician-dammam-600.webp 600w, /img/kitchen-maintenance-technician-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-maintenance-technician-dammam-900.jpg" srcset="/img/kitchen-maintenance-technician-dammam-1400.jpg 1400w, /img/kitchen-maintenance-technician-dammam-900.jpg 900w, /img/kitchen-maintenance-technician-dammam-600.jpg 600w, /img/kitchen-maintenance-technician-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="فني صيانة مطابخ بالدمام ألمنيوم وخشب" class="srv-thumb" width="400" height="225" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="فني صيانة مطابخ بالدمام" data-en="Kitchen Maintenance Technician">فني صيانة مطابخ بالدمام</h3>
@@ -210,7 +212,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 2 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/تركيب مطابخ بالدمام.jpg" alt="فك وتركيب ونقل مطابخ بالدمام" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-fitout-dammam-1400.webp 1400w, /img/kitchen-fitout-dammam-900.webp 900w, /img/kitchen-fitout-dammam-600.webp 600w, /img/kitchen-fitout-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-fitout-dammam-900.jpg" srcset="/img/kitchen-fitout-dammam-1400.jpg 1400w, /img/kitchen-fitout-dammam-900.jpg 900w, /img/kitchen-fitout-dammam-600.jpg 600w, /img/kitchen-fitout-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="فك وتركيب ونقل مطابخ بالدمام" class="srv-thumb" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="فك وتركيب ونقل المطابخ" data-en="Kitchen Dismantling & Moving">فك وتركيب ونقل المطابخ</h3>
@@ -224,7 +229,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 3 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/10.jpg" alt="تعديل وقص وتفصيل دواليب المطابخ" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-10-1400.webp 1400w, /img/kitchen-project-10-900.webp 900w, /img/kitchen-project-10-600.webp 600w, /img/kitchen-project-10-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-10-900.jpg" srcset="/img/kitchen-project-10-1400.jpg 1400w, /img/kitchen-project-10-900.jpg 900w, /img/kitchen-project-10-600.jpg 600w, /img/kitchen-project-10-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تعديل وقص وتفصيل دواليب المطابخ" class="srv-thumb" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="تعديل وقص وتفصيل المطابخ" data-en="Kitchen Customizing & Cutting">تعديل وقص وتفصيل المطابخ</h3>
@@ -238,7 +246,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 4 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/11.jpg" alt="تغيير وصيانة رخام المطابخ بالدمام" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-11-1400.webp 1400w, /img/kitchen-project-11-900.webp 900w, /img/kitchen-project-11-600.webp 600w, /img/kitchen-project-11-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-11-900.jpg" srcset="/img/kitchen-project-11-1400.jpg 1400w, /img/kitchen-project-11-900.jpg 900w, /img/kitchen-project-11-600.jpg 600w, /img/kitchen-project-11-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تغيير وصيانة رخام المطابخ بالدمام" class="srv-thumb" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="تغيير وصيانة رخام المطابخ" data-en="Countertop Repair & Replacement">تغيير وصيانة رخام المطابخ</h3>
@@ -252,7 +263,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 5 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/1.jpg" alt="صيانة وإصلاح المفصلات بالدمام" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-01-1400.webp 1400w, /img/kitchen-project-01-900.webp 900w, /img/kitchen-project-01-600.webp 600w, /img/kitchen-project-01-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-01-900.jpg" srcset="/img/kitchen-project-01-1400.jpg 1400w, /img/kitchen-project-01-900.jpg 900w, /img/kitchen-project-01-600.jpg 600w, /img/kitchen-project-01-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="صيانة وإصلاح المفصلات بالدمام" class="srv-thumb" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="إصلاح وتبديل مفصلات هيدروليك" data-en="Hydraulic Hinges Replacement">إصلاح وتبديل مفصلات هيدروليك</h3>
@@ -266,7 +280,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 6 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/3.jpg" alt="إصلاح واستبدال سحابات الأدراج" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-03-1400.webp 1400w, /img/kitchen-project-03-900.webp 900w, /img/kitchen-project-03-600.webp 600w, /img/kitchen-project-03-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-03-900.jpg" srcset="/img/kitchen-project-03-1400.jpg 1400w, /img/kitchen-project-03-900.jpg 900w, /img/kitchen-project-03-600.jpg 600w, /img/kitchen-project-03-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="إصلاح واستبدال سحابات الأدراج" class="srv-thumb" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="إصلاح واستبدال سحابات الأدراج" data-en="Drawer Slides Repair">إصلاح واستبدال سحابات الأدراج</h3>
@@ -280,7 +297,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 7 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/12.jpg" alt="تركيب وصيانة مطابخ إيكيا والجاهزة بالدمام" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-12-1400.webp 1400w, /img/kitchen-project-12-900.webp 900w, /img/kitchen-project-12-600.webp 600w, /img/kitchen-project-12-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-12-900.jpg" srcset="/img/kitchen-project-12-1400.jpg 1400w, /img/kitchen-project-12-900.jpg 900w, /img/kitchen-project-12-600.jpg 600w, /img/kitchen-project-12-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تركيب وصيانة مطابخ إيكيا والجاهزة بالدمام" class="srv-thumb" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="تركيب وصيانة مطابخ إيكيا والجاهزة" data-en="IKEA & Modular Kitchen Assembly">تركيب وصيانة مطابخ إيكيا والجاهزة</h3>
@@ -294,7 +314,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         <!-- Service 8 -->
         <div class="card service-card">
           <div class="srv-img-box">
-            <img src="/assets/6.jpg" alt="تجديد واجهات المطبخ ورش دواليب بالدمام" class="srv-thumb" width="400" height="300" loading="lazy" />
+            <picture>
+            <source type="image/webp" srcset="/img/kitchen-project-06-1400.webp 1400w, /img/kitchen-project-06-900.webp 900w, /img/kitchen-project-06-600.webp 600w, /img/kitchen-project-06-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" />
+            <img src="/img/kitchen-project-06-900.jpg" srcset="/img/kitchen-project-06-1400.jpg 1400w, /img/kitchen-project-06-900.jpg 900w, /img/kitchen-project-06-600.jpg 600w, /img/kitchen-project-06-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 400px" alt="تجديد واجهات المطبخ ورش دواليب بالدمام" class="srv-thumb" width="400" height="400" loading="lazy" decoding="async" />
+          </picture>
           </div>
           <div class="srv-card-body">
             <h3 data-ar="تجديد واجهات المطبخ ورش الدواليب" data-en="Kitchen Refacing & Cabinet Painting">تجديد واجهات المطبخ ورش الدواليب</h3>
@@ -431,14 +454,10 @@ import IdentityCard from '../components/IdentityCard.astro';
   <section class="section section-alt">
     <div class="container">
       <div class="presentation-banner-wrap">
-        <img
-          src="/assets/Beige Brown and White Minimalist Smart Kitchens Pitch Deck Presentation.jpg"
-          alt="تصاميم وصيانة المطابخ الذكية في الدمام"
-          class="presentation-banner-img"
-          width="1200"
-          height="675"
-          loading="lazy"
-        />
+        <picture>
+            <source type="image/webp" srcset="/img/smart-kitchen-project-dammam-1400.webp 1400w, /img/smart-kitchen-project-dammam-900.webp 900w, /img/smart-kitchen-project-dammam-600.webp 600w, /img/smart-kitchen-project-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 1200px" />
+            <img src="/img/smart-kitchen-project-dammam-900.jpg" srcset="/img/smart-kitchen-project-dammam-1400.jpg 1400w, /img/smart-kitchen-project-dammam-900.jpg 900w, /img/smart-kitchen-project-dammam-600.jpg 600w, /img/smart-kitchen-project-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 1200px" alt="تصاميم وصيانة المطابخ الذكية في الدمام" class="presentation-banner-img" width="1200" height="675" loading="lazy" decoding="async" />
+          </picture>
       </div>
     </div>
   </section>
@@ -574,7 +593,7 @@ import IdentityCard from '../components/IdentityCard.astro';
 .hero-bg-image {
   position: absolute;
   inset: -35px;
-  background-image: url('/assets/0552854516.jpg');
+  background-image: url('/img/kitchen-installation-dammam-1400.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

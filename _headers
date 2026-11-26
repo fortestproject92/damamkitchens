@@ -1,0 +1,28 @@
+# Cache policy for damamkitchens.com
+# NOTE: GitHub Pages ignores this file. It is read by Netlify, Cloudflare Pages,
+# and Cloudflare in front of GitHub Pages. If the site stays on plain GitHub Pages,
+# disable "Pages" caching in front and place a Cloudflare cache rule instead:
+#   /img/*  -> Cache Everything, Edge TTL 1 year, Browser TTL 1 year
+
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=604800
+
+/*.ico
+  Cache-Control: public, max-age=604800
+
+/manifest.json
+  Cache-Control: public, max-age=86400
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin

@@ -7,6 +7,9 @@ export interface Props {
   canonical?: string;
   page?: string;
   ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  preloadImage?: string;
 }
 
 const {
@@ -14,7 +17,10 @@ const {
   description,
   canonical = `https://www.damamkitchens.com${Astro.url.pathname}`,
   page = '',
-  ogImage = '/assets/logo/1.png'
+  ogImage = '/img/hero-kitchen-1200.jpg',
+  ogImageWidth = 1200,
+  ogImageHeight = 675,
+  preloadImage
 } = Astro.props;
 
 const siteUrl = 'https://www.damamkitchens.com';
@@ -31,8 +37,8 @@ const localBusinessSchema = {
   "url": siteUrl,
   "telephone": phone,
   "priceRange": "$$",
-  "image": `${siteUrl}/assets/logo/1.png`,
-  "logo": `${siteUrl}/assets/logo/1.png`,
+  "image": `${siteUrl}/img/logo-mark-360.jpg`,
+  "logo": `${siteUrl}/img/logo-mark-360.jpg`,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "الدمام",
@@ -193,14 +199,10 @@ const faqSchema = {
   <!-- Primary Meta -->
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="keywords" content="فني مطابخ بالدمام, فني مطابخ الدمام, فني صيانة مطابخ بالدمام, فني تركيب مطابخ بالدمام, فني فك وتركيب مطابخ بالدمام, معلم مطابخ بالدمام, نجار مطابخ بالدمام, صيانة مطابخ بالدمام, تركيب مطابخ بالدمام, فك وتركيب مطابخ بالدمام, تفصيل مطابخ بالدمام, تعديل وقص مطابخ بالدمام, نقل مطابخ بالدمام, مطابخ الدمام, محلات مطابخ بالدمام, ورشة مطابخ بالدمام, فني مطابخ المنيوم بالدمام, صيانة مطابخ المنيوم بالدمام, صيانة مطابخ خشب بالدمام, صيانة مطابخ صاج بالدمام, صيانة مطابخ كلادينج بالدمام, إصلاح مفصلات مطابخ الدمام, تغيير مفصلات هيدروليك, تصليح سحابات ادراج المطبخ, تصليح دواليب المطبخ بالدمام, تغيير رخام مطابخ الدمام, رخام صناعي وطبيعي للمطابخ بالدمام, صيانة مطابخ ايكيا بالدمام, تركيب مطابخ ايكيا بالدمام, فني مطابخ الخبر, صيانة مطابخ الخبر, فني مطابخ القطيف, صيانة مطابخ القطيف, فني مطابخ الظهران, فني مطابخ الجبيل, ارخص فني مطابخ بالدمام, افضل فني مطابخ بالدمام, رقم فني مطابخ بالدمام, شركة صيانة مطابخ بالدمام" />
   <meta name="author" content={siteName} />
-  <meta name="robots" content="index, follow" />
-  <!-- Canonical & Alternate -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <!-- Canonical -->
   <link rel="canonical" href={canonical} />
-  <link rel="alternate" hreflang="ar" href={canonical} />
-  <link rel="alternate" hreflang="en" href={`${siteUrl}/en${Astro.url.pathname}`} />
-  <link rel="alternate" hreflang="x-default" href={canonical} />
 
   <!-- Local SEO Geo Meta (Dammam & Eastern Province) -->
   <meta name="geo.region" content="SA-04" />
@@ -212,20 +214,17 @@ const faqSchema = {
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:image:width" content={ogImageWidth} />
+  <meta property="og:image:height" content={ogImageHeight} />
+  <meta property="og:image:alt" content={title} />
   <meta property="og:site_name" content={siteName} />
   <meta property="og:locale" content="ar_SA" />
-  <meta property="og:locale:alternate" content="en_US" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
-
-  <!-- hreflang -->
-  <link rel="alternate" hreflang="ar" href={canonical} />
-  <link rel="alternate" hreflang="en" href={`${siteUrl}/en${Astro.url.pathname}`} />
-  <link rel="alternate" hreflang="x-default" href={canonical} />
 
   <!-- Manifest & PWA -->
   <link rel="manifest" href="/manifest.json" />
@@ -242,6 +241,10 @@ const faqSchema = {
   <!-- Google Fonts - Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  {preloadImage && (
+    <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />
+  )}
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />

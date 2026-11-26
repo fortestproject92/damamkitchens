@@ -10,10 +10,13 @@ import IdentityCard from '../components/IdentityCard.astro';
   title="من نحن | فني مطابخ وصيانة مطابخ بالدمام والشرقية"
   description="تعرف على خبرتنا الممتدة في صيانة، فك، تركيب، وتعديل مطابخ الألمنيوم والخشب والرخام بالدمام والمنطقة الشرقية. أمانة ودقة وأفضل قطع الغيار 0552854516."
   page="about"
+  ogImage="/img/kitchen-maintenance-technician-dammam-1400.jpg"
+  ogImageWidth={1400}
+  ogImageHeight={788}
 >
   <Header slot="header" />
 
-  <section class="page-hero" style="background-image: url('/assets/فني شركة صيانة مطابخ بالدمام0552854516.jpg');">
+  <section class="page-hero" style="background-image: url('/img/kitchen-maintenance-technician-dammam-1400.jpg');">
     <div class="container">
       <h1 data-ar="من نحن - فني مطابخ وصيانة مطابخ الدمام" data-en="About Us - Dammam Kitchen Maintenance">من نحن - فني مطابخ وصيانة مطابخ الدمام</h1>
       <p data-ar="رواد صيانة، فك وتركيب، وتعديل المطابخ وتصليح المفصلات والسحابات في الدمام والمنطقة الشرقية بأعلى معايير الإتقان المهني." data-en="Pioneers in kitchen maintenance, moving, resizing, hinge, and drawer repairs in Dammam and Eastern Province with top craftsmanship standards.">
@@ -44,14 +47,10 @@ import IdentityCard from '../components/IdentityCard.astro';
         </div>
 
         <div class="story-media-wrap">
-          <img
-            src="/assets/فني شركة صيانة مطابخ بالدمام0552854516.jpg"
-            alt="فني صيانة مطابخ بالدمام"
-            class="story-photo card"
-            width="600"
-            height="400"
-            loading="lazy"
-          />
+          <picture>
+            <source type="image/webp" srcset="/img/kitchen-maintenance-technician-dammam-1400.webp 1400w, /img/kitchen-maintenance-technician-dammam-900.webp 900w, /img/kitchen-maintenance-technician-dammam-600.webp 600w, /img/kitchen-maintenance-technician-dammam-400.webp 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 600px" />
+            <img src="/img/kitchen-maintenance-technician-dammam-900.jpg" srcset="/img/kitchen-maintenance-technician-dammam-1400.jpg 1400w, /img/kitchen-maintenance-technician-dammam-900.jpg 900w, /img/kitchen-maintenance-technician-dammam-600.jpg 600w, /img/kitchen-maintenance-technician-dammam-400.jpg 400w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 600px" alt="فني صيانة مطابخ بالدمام" class="story-photo card" width="600" height="338" loading="lazy" decoding="async" />
+          </picture>
         </div>
       </div>
     </div>
